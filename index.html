@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>HONTANGAS LIGUI</title>
+    <style>
+        @keyframes cambioDeColor {
+            0% { background: #ff9900; }
+            33% { background: #ff66cc; }
+            66% { background: #00ccff; }
+            100% { background: #ff9900; }
+        }
+        body {
+            animation: cambioDeColor 20s linear infinite;
+            color: rgba(0, 0, 0, 0.861);
+        }
+        h1 {
+            font-size: 40px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+        }
+        .contenedor-tablas {
+            display: flex;
+            justify-content: center; /* Ajusta la alineación horizontal según tus necesidades */
+        }
+        .contenedor-tablasdos {
+            display: flex;
+            justify-content: space-around; /* Ajusta la alineación horizontal según tus necesidades */
+        }
+        td {
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body bgcolor="lightblue">
+    <h1>Resultados de la Liga</h1>
+    <div id="ligaResultados"></div>
+
+
+<!-- Definicion de variables: nombres y jornadas. ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+<script>
+    // Nombres ordenados alfabeticamente
+    const nombres = ["Alex", "Carmelo", "Ismael", "Jorge", "Jose", "Juan", "Marcos", "Oscar", "Sergio", "Victor"];
+    const personasliga = [
+            { nombrel: nombres[0], globaliga: 0,  season1: 0, season2: 0, season3: 0, season4: 0},
+            { nombrel: nombres[1], globaliga: 0,  season1: 0, season2: 0, season3: 0, season4: 0},
+            { nombrel: nombres[2], globaliga: 0,  season1: 0, season2: 0, season3: 0, season4: 0},
+            { nombrel: nombres[3], globaliga: 0,  season1: 0, season2: 0, season3: 0, season4: 0},
+            { nombrel: nombres[4], globaliga: 0,  season1: 0, season2: 0, season3: 0, season4: 0},
+            { nombrel: nombres[5], globaliga: 0,  season1: 0, season2: 0, season3: 0, season4: 0},
+            { nombrel: nombres[6], globaliga: 0,  season1: 0, season2: 0, season3: 0, season4: 0},
+            { nombrel: nombres[7], globaliga: 0,  season1: 0, season2: 0, season3: 0, season4: 0},
+            { nombrel: nombres[8], globaliga: 0,  season1: 0, season2: 0, season3: 0, season4: 0},
+            { nombrel: nombres[9], globaliga: 0,  season1: 0, season2: 0, season3: 0, season4: 0}
+        ];
+    const jornada1 = [45, 27, 50, 24, 30, 21, 28, 30, 13, 35]; // Resultados de la primera jornada
+    const jornada2 = [55, 45, 38, 53, 63, 54, 44, 61, 17, 53];
+    const jornada3 = [22, 46, 41, 36, 56, 53, 60, 65, 36, 55];
+    const jornada4 = [53, 43, 57, 35, 35, 32, 41, 55, 47, 37];
+    const jornada5 = [53, 40, 62, 41, 52, 30, 72, 72, 43, 47];
+    const jornada6 = [42, 45, 45, 47, 47, 53, 64, 74, 38, 68];
+    const jornada7 = [32, 42, 42, 33, 46, 45, 52, 45, 36, 43];
+    const jornada8 = [47, 43, 46, 39, 53, 68, 45, 56, 42, 67];
+    const jornada9 = [66, 41, 43, 53, 87, 70, 48, 57, 69, 41];
+    const jornada10 = [55, 66, 36, 54, 48, 80, 62, 62, 35, 71];
+    const jornada11 = [49, 58, 0, 78, 48, 68, 52, 36, 38, 62];
+    const jornada12 = [48, 49, 32, 69, 67, 70, 50, 49, 44, 61];
+    const jornada13 = [82, 40, 54, 65, 61, 47, 67, 71, 47, 78];
+    const jornada14 = [47, 59, 41, 72, 64, 79, 71, 41, 59, 45];
+    const jornada15 = [43, 36, 73, 54, 57, 45, 67, 52, 25, 47];
+    const jornada16 = [47, 64, 79, 62, 53, 62, 56, 74, 54, 64];
+    const jornada17 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+    const jornada18 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+</script>
+
+
+<!-- Funcion para calcular la tabla de enfrentamientos especificos----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+<script>
+    // Funcion para calcular la tabla de enfrentamientos especificos
+    function calcularTablaEnfrentamientosEspecificos(nombres, jornada, enfrentamientos, personasliga, estacion) {
+        const tablaEnfrentamientosEspecificos = [];
+
+        enfrentamientos.forEach(enfrentamiento => {
+            const jugadorA = enfrentamiento.JugadorA;
+            const jugadorB = enfrentamiento.JugadorB;
+            const puntosA = jornada[nombres.indexOf(jugadorA)];
+            const puntosB = jornada[nombres.indexOf(jugadorB)];
+            let puntosJugadorA = 0;
+            let puntosJugadorB = 0;
+            if (puntosA == 0 && puntosB ==0){
+                puntosJugadorA = ""
+                puntosJugadorB = ""
+            }else if (puntosA > puntosB) {
+                puntosJugadorA = 3;
+            } else if (puntosA < puntosB) {
+                puntosJugadorB = 3;
+            } else {
+                puntosJugadorA = 1;
+                puntosJugadorB = 1;
+            }
+            y=0;
+            while (y<10){
+            if (jugadorA == personasliga[y].nombrel){
+                personasliga[y].globaliga+=puntosJugadorA;
+                if(estacion == 1){
+                    personasliga[y].season1+=puntosJugadorA;
+                }
+                else if(estacion == 2){
+                    personasliga[y].season2+=puntosJugadorA;
+                }
+                else if(estacion == 3){
+                    personasliga[y].season3+=puntosJugadorA;
+                }
+                else if(estacion == 4){
+                    personasliga[y].season4+=puntosJugadorA;
+                }
+            }
+            else if (jugadorB == personasliga[y].nombrel){
+                personasliga[y].globaliga+=puntosJugadorB;
+                if(estacion == 1){
+                    personasliga[y].season1+=puntosJugadorB;
+                }
+                else if(estacion == 2){
+                    personasliga[y].season2+=puntosJugadorB;
+                }
+                else if(estacion == 3){
+                    personasliga[y].season3+=puntosJugadorB;
+                }
+                else if(estacion == 4){
+                    personasliga[y].season4+=puntosJugadorB;
+                }
+            }
+            y+=1;
+        }
+
+            tablaEnfrentamientosEspecificos.push({
+                JugadorA: jugadorA,
+                JugadorB: jugadorB,
+                PuntosA: puntosA,
+                PuntosB: puntosB,
+                PuntosJugadorA: puntosJugadorA,
+                PuntosJugadorB: puntosJugadorB,
+            });
+        });
+        
+        return tablaEnfrentamientosEspecificos;
+        
+    }
+</script>
+
+<!-- ESTACIONES #####################################################################-->
+
+<button onclick="toggleDivs1()" style="background-color:blueviolet; color: white;">SUMMER SPLIT</button>
+<p></p>
+<p>
+<div id="div1" style="display: none;">
+    <button id="mostrarOcultar1">JORNADA 1</button>
+    <p></p>
+    <div id="tablaContainer1" style="display: none;"></div>
+    <p></p>
+</div>
+<div id="div2" style="display: none;">
+    <button id="mostrarOcultar2">JORNADA 2</button>
+    <p></p>
+    <div id="tablaContainer2" style="display: none;"></div>
+    <p></p>
+</div>
+<div id="div3" style="display: none;">
+    <button id="mostrarOcultar3">JORNADA 3</button>
+    <p></p>
+    <div id="tablaContainer3" style="display: none;"></div>
+    <p></p>
+</div>
+<div id="div4" style="display: none;">
+    <button id="mostrarOcultar4">JORNADA 4</button>
+    <p></p>
+    <div id="tablaContainer4" style="display: none;"></div>
+    <p></p>
+</div>
+<div id="div5" style="display: none;">
+    <button id="mostrarOcultar5">JORNADA 5</button>
+    <p></p>
+    <div id="tablaContainer5" style="display: none;"></div>
+    <p></p>
+</div>
+<div id="div6" style="display: none;">
+    <button id="mostrarOcultar6">JORNADA 6</button>
+    <p></p>
+    <div id="tablaContainer6" style="display: none;"></div>
+    <p></p>
+</div>
+<div id="div7" style="display: none;">
+    <button id="mostrarOcultar7">JORNADA 7</button>
+    <p></p>
+    <div id="tablaContainer7" style="display: none;"></div>
+    <p></p>
+</div>
+<div id="div8" style="display: none;">
+    <button id="mostrarOcultar8">JORNADA 8</button>
+    <p></p>
+    <div id="tablaContainer8" style="display: none;"></div>
+    <p></p>
+</div>
+<div id="div9" style="display: none;">
+    <button id="mostrarOcultar9">JORNADA 9</button>
+    <p></p>
+    <div id="tablaContainer9" style="display: none;"></div>
+    <p></p>
+</div>
+<script>
+    function toggleDivs1() {
+        var div1 = document.getElementById("div1");
+        var div2 = document.getElementById("div2");
+        var div3 = document.getElementById("div3");
+        var div4 = document.getElementById("div4");
+        var div5 = document.getElementById("div5");
+        var div6 = document.getElementById("div6");
+        var div7 = document.getElementById("div7");
+        var div8 = document.getElementById("div8");
+        var div9 = document.getElementById("div9");
+
+        if (div1.style.display === "none") {
+            div1.style.display = "block";
+            div2.style.display = "block";
+            div3.style.display = "block";
+            div4.style.display = "block";
+            div5.style.display = "block";
+            div6.style.display = "block";
+            div7.style.display = "block";
+            div8.style.display = "block";
+            div9.style.display = "block";
+        } else {
+            div1.style.display = "none";
+            div2.style.display = "none";
+            div3.style.display = "none";
+            div4.style.display = "none";
+            div5.style.display = "none";
+            div6.style.display = "none";
+            div7.style.display = "none";
+            div8.style.display = "none";
+            div9.style.display = "none";
+        }
+    }
+</script>
+<button onclick="toggleDivs2()" style="background-color:blueviolet; color: white;">AUTUMN SPLIT</button>
+<p></p>
+<div id="div10" style="display: none;">
+    <button id="mostrarOcultar10">JORNADA 10</button>
+    <p></p>
+    <div id="tablaContainer10" style="display: none;"></div>
+    <p></p>
+</div>
+<div id="div11" style="display: none;">
+    <button id="mostrarOcultar11">JORNADA 11</button>
+    <p></p>
+    <div id="tablaContainer11" style="display: none;"></div>
+    <p></p>
+</div>
+<div id="div12" style="display: none;">
+    <button id="mostrarOcultar12">JORNADA 12</button>
+    <p></p>
+    <div id="tablaContainer12" style="display: none;"></div>
+    <p></p>
+</div>
+<div id="div13" style="display: none;">
+    <button id="mostrarOcultar13">JORNADA 13</button>
+    <p></p>
+    <div id="tablaContainer13" style="display: none;"></div>
+    <p></p>
+</div>
+<div id="div14" style="display: none;">
+    <button id="mostrarOcultar14">JORNADA 14</button>
+    <p></p>
+    <div id="tablaContainer14" style="display: none;"></div>
+    <p></p>
+</div>
+<div id="div15" style="display: none;">
+    <button id="mostrarOcultar15">JORNADA 15</button>
+    <p></p>
+    <div id="tablaContainer15" style="display: none;"></div>
+    <p></p>
+</div>
+<div id="div16" style="display: none;">
+    <button id="mostrarOcultar16">JORNADA 16</button>
+    <p></p>
+    <div id="tablaContainer16" style="display: none;"></div>
+    <p></p>
+</div>
+<div id="div17" style="display: none;">
+    <button id="mostrarOcultar17">JORNADA 17</button>
+    <p></p>
+    <div id="tablaContainer17" style="display: none;"></div>
+    <p></p>
+</div>
+<div id="div18" style="display: none;">
+    <button id="mostrarOcultar18">JORNADA 18</button>
+    <p></p>
+    <div id="tablaContainer18" style="display: none;"></div>
+    <p></p>
+</div>
+<script>
+    function toggleDivs2() {
+        var div1 = document.getElementById("div10");
+        var div2 = document.getElementById("div11");
+        var div3 = document.getElementById("div12");
+        var div4 = document.getElementById("div13");
+        var div5 = document.getElementById("div14");
+        var div6 = document.getElementById("div15");
+        var div7 = document.getElementById("div16");
+        var div8 = document.getElementById("div17");
+        var div9 = document.getElementById("div18");
+
+        if (div1.style.display === "none") {
+            div10.style.display = "block";
+            div11.style.display = "block";
+            div12.style.display = "block";
+            div13.style.display = "block";
+            div14.style.display = "block";
+            div15.style.display = "block";
+            div16.style.display = "block";
+            div17.style.display = "block";
+            div18.style.display = "block";
+        } else {
+            div10.style.display = "none";
+            div11.style.display = "none";
+            div12.style.display = "none";
+            div13.style.display = "none";
+            div14.style.display = "none";
+            div15.style.display = "none";
+            div16.style.display = "none";
+            div17.style.display = "none";
+            div18.style.display = "none";
+        }
+    }
+</script>
+<button onclick="toggleDivs()" style="background-color:blueviolet; color: white;">WINTER SPLIT</button>
+<p></p>
+<button onclick="toggleDivs()" style="background-color:blueviolet; color: white;">SPRING SPLIT</button>
+<p></p>
+</p>
+
+
+<!-- JORNADAS-->
+<p>
+<!-- ESTACION 111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111-->
+<script>estacion=1;</script>
+<!--JORNADA 1 ########################################################################################################################-->
+<script>
+    // Calcular la tabla de enfrentamientos especificos
+    const enfrentamientos1 = [
+        { JugadorA: "Marcos", JugadorB: "Victor" },
+        { JugadorA: "Alex", JugadorB: "Carmelo" },
+        { JugadorA: "Sergio", JugadorB: "Jorge" },
+        { JugadorA: "Ismael", JugadorB: "Oscar" },
+        { JugadorA: "Jose", JugadorB: "Juan" }
+    ];
+    const tablaEnfrentamientosEspecificos1 = calcularTablaEnfrentamientosEspecificos(nombres, jornada1, enfrentamientos1, personasliga, estacion);
+    
+    //personasliga = calcularTablaEnfrentamientosEspecificos(nombres, jornada1, enfrentamientos1, personasliga, estacion);
+    // Crear una tabla HTML con los resultados de los enfrentamientos especificos
+    const tablaHTML1 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
+        tablaEnfrentamientosEspecificos1.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
+</script>
+<script>
+    // Funcion para mostrar/ocultar la tabla
+    function toggleTabla1() {
+        var tablaContainer1 = document.getElementById("tablaContainer1");
+        if (tablaContainer1.style.display === "none") {
+            // Muestra la tabla
+            tablaContainer1.innerHTML = tablaHTML1; // Asigna el contenido HTML generado en JavaScript
+            tablaContainer1.style.display = "block";
+        } else {
+            // Oculta la tabla
+            tablaContainer1.innerHTML = ""; // Borra el contenido HTML
+            tablaContainer1.style.display = "none";
+        }
+    }
+
+    // Asociar la funcion al evento click del boton
+    document.getElementById("mostrarOcultar1").addEventListener("click", toggleTabla1);
+</script>
+
+    
+<!--JORNADA 2 ########################################################################################################################-->
+<script>
+    // Calcular la tabla de enfrentamientos especificos
+    const enfrentamientos2 = [
+        { JugadorA: "Juan", JugadorB: "Marcos" },
+        { JugadorA: "Jose", JugadorB: "Ismael" },
+        { JugadorA: "Victor", JugadorB: "Alex" },
+        { JugadorA: "Oscar", JugadorB: "Jorge" },
+        { JugadorA: "Carmelo", JugadorB: "Sergio" }
+    ];
+    const tablaEnfrentamientosEspecificos2 = calcularTablaEnfrentamientosEspecificos(nombres, jornada2, enfrentamientos2, personasliga, estacion);
+
+    // Crear una tabla HTML con los resultados de los enfrentamientos especificos        
+    const tablaHTML2 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
+        tablaEnfrentamientosEspecificos2.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
+</script>
+<script>
+    // Funcion para mostrar/ocultar la tabla
+    function toggleTabla2() {
+        var tablaContainer2 = document.getElementById("tablaContainer2");
+        if (tablaContainer2.style.display === "none") {
+            // Muestra la tabla
+            tablaContainer2.innerHTML = tablaHTML2; // Asigna el contenido HTML generado en JavaScript
+            tablaContainer2.style.display = "block";
+        } else {
+            // Oculta la tabla
+            tablaContainer2.innerHTML = ""; // Borra el contenido HTML
+            tablaContainer2.style.display = "none";
+        }
+    }
+
+    // Asociar la funcion al evento click del boton
+    document.getElementById("mostrarOcultar2").addEventListener("click", toggleTabla2);
+</script>
+
+
+<!--JORNADA 3 ########################################################################################################################-->
+<script>
+    // Calcular la tabla de enfrentamientos especificos
+    const enfrentamientos3 = [
+        { JugadorA: "Juan", JugadorB: "Ismael" },
+        { JugadorA: "Marcos", JugadorB: "Alex" },
+        { JugadorA: "Jose", JugadorB: "Jorge" },
+        { JugadorA: "Victor", JugadorB: "Sergio" },
+        { JugadorA: "Oscar", JugadorB: "Carmelo" }
+    ];
+    const tablaEnfrentamientosEspecificos3 = calcularTablaEnfrentamientosEspecificos(nombres, jornada3, enfrentamientos3, personasliga, estacion);
+
+    // Crear una tabla HTML con los resultados de los enfrentamientos especificos       
+    const tablaHTML3 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
+        tablaEnfrentamientosEspecificos3.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
+    
+    // ligaResultados.innerHTML = tablaHTML;
+</script>
+<script>
+    // Funcion para mostrar/ocultar la tabla
+    function toggleTabla3() {
+        var tablaContainer3 = document.getElementById("tablaContainer3");
+        if (tablaContainer3.style.display === "none") {
+            // Muestra la tabla
+            tablaContainer3.innerHTML = tablaHTML3; // Asigna el contenido HTML generado en JavaScript
+            tablaContainer3.style.display = "block";
+        } else {
+            // Oculta la tabla
+            tablaContainer3.innerHTML = ""; // Borra el contenido HTML
+            tablaContainer3.style.display = "none";
+        }
+    }
+
+    // Asociar la funcion al evento click del boton
+    document.getElementById("mostrarOcultar3").addEventListener("click", toggleTabla3);
+</script>
+    
+
+<!--JORNADA 4 ########################################################################################################################-->
+<script>
+    // Calcular la tabla de enfrentamientos especificos
+    const enfrentamientos4 = [
+        { JugadorA: "Juan", JugadorB: "Alex" },
+        { JugadorA: "Ismael", JugadorB: "Jorge" },
+        { JugadorA: "Marcos", JugadorB: "Sergio" },
+        { JugadorA: "Jose", JugadorB: "Carmelo" },
+        { JugadorA: "Victor", JugadorB: "Oscar" }
+    ];
+    const tablaEnfrentamientosEspecificos4 = calcularTablaEnfrentamientosEspecificos(nombres, jornada4, enfrentamientos4, personasliga, estacion);
+
+    // Crear una tabla HTML con los resultados de los enfrentamientos especificos        
+    const tablaHTML4 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
+        tablaEnfrentamientosEspecificos4.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
+</script>   
+<script>
+    // Funcion para mostrar/ocultar la tabla
+    function toggleTabla4() {
+        var tablaContainer4 = document.getElementById("tablaContainer4");
+        if (tablaContainer4.style.display === "none") {
+            // Muestra la tabla
+            tablaContainer4.innerHTML = tablaHTML4; // Asigna el contenido HTML generado en JavaScript
+            tablaContainer4.style.display = "block";
+        } else {
+            // Oculta la tabla
+            tablaContainer4.innerHTML = ""; // Borra el contenido HTML
+            tablaContainer4.style.display = "none";
+        }
+    }
+
+    // Asociar la funcion al evento click del boton
+    document.getElementById("mostrarOcultar4").addEventListener("click", toggleTabla4);
+</script>
+
+
+<!--JORNADA 5 ########################################################################################################################-->
+<script>
+    // Calcular la tabla de enfrentamientos especificos
+    const enfrentamientos5 = [
+        { JugadorA: "Juan", JugadorB: "Jorge" },
+        { JugadorA: "Alex", JugadorB: "Sergio" },
+        { JugadorA: "Ismael", JugadorB: "Carmelo" },
+        { JugadorA: "Marcos", JugadorB: "Oscar" },
+        { JugadorA: "Jose", JugadorB: "Victor" }
+    ];
+    const tablaEnfrentamientosEspecificos5 = calcularTablaEnfrentamientosEspecificos(nombres, jornada5, enfrentamientos5 , personasliga, estacion);
+
+    // Crear una tabla HTML con los resultados de los enfrentamientos especificos        
+    const tablaHTML5 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
+        tablaEnfrentamientosEspecificos5.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
+</script>    
+<script>
+    // Funcion para mostrar/ocultar la tabla
+    function toggleTabla5() {
+        var tablaContainer5 = document.getElementById("tablaContainer5");
+        if (tablaContainer5.style.display === "none") {
+            // Muestra la tabla
+            tablaContainer5.innerHTML = tablaHTML5; // Asigna el contenido HTML generado en JavaScript
+            tablaContainer5.style.display = "block";
+        } else {
+            // Oculta la tabla
+            tablaContainer5.innerHTML = ""; // Borra el contenido HTML
+            tablaContainer5.style.display = "none";
+        }
+    }
+
+    // Asociar la funcion al evento click del boton
+    document.getElementById("mostrarOcultar5").addEventListener("click", toggleTabla5);
+</script>
+
+
+<!--JORNADA 6 ########################################################################################################################-->
+<script>    
+    // Calcular la tabla de enfrentamientos especificos
+    const enfrentamientos6 = [
+        { JugadorA: "Juan", JugadorB: "Sergio" },
+        { JugadorA: "Jorge", JugadorB: "Carmelo" },
+        { JugadorA: "Alex", JugadorB: "Oscar" },
+        { JugadorA: "Ismael", JugadorB: "Victor" },
+        { JugadorA: "Marcos", JugadorB: "Jose" }
+    ];
+    const tablaEnfrentamientosEspecificos6 = calcularTablaEnfrentamientosEspecificos(nombres, jornada6, enfrentamientos6, personasliga, estacion);
+
+    // Crear una tabla HTML con los resultados de los enfrentamientos especificos        
+    const tablaHTML6 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
+        tablaEnfrentamientosEspecificos6.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
+</script>
+<script>
+    // Funcion para mostrar/ocultar la tabla
+    function toggleTabla6() {
+        var tablaContainer6 = document.getElementById("tablaContainer6");
+        if (tablaContainer6.style.display === "none") {
+            // Muestra la tabla
+            tablaContainer6.innerHTML = tablaHTML6; // Asigna el contenido HTML generado en JavaScript
+            tablaContainer6.style.display = "block";
+        } else {
+            // Oculta la tabla
+            tablaContainer6.innerHTML = ""; // Borra el contenido HTML
+            tablaContainer6.style.display = "none";
+        }
+    }
+
+    // Asociar la funcion al evento click del boton
+    document.getElementById("mostrarOcultar6").addEventListener("click", toggleTabla6);
+</script>
+
+
+<!--JORNADA 7 ########################################################################################################################-->
+<script>    
+    // Calcular la tabla de enfrentamientos especificos
+    const enfrentamientos7 = [
+        { JugadorA: "Juan", JugadorB: "Carmelo" },
+        { JugadorA: "Sergio", JugadorB: "Oscar" },
+        { JugadorA: "Jorge", JugadorB: "Victor" },
+        { JugadorA: "Alex", JugadorB: "Jose" },
+        { JugadorA: "Ismael", JugadorB: "Marcos" }
+    ];
+    const tablaEnfrentamientosEspecificos7 = calcularTablaEnfrentamientosEspecificos(nombres, jornada7, enfrentamientos7, personasliga, estacion);
+
+    // Crear una tabla HTML con los resultados de los enfrentamientos especificos        
+    const tablaHTML7 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
+        tablaEnfrentamientosEspecificos7.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
+</script>
+<script>
+    // Funcion para mostrar/ocultar la tabla
+    function toggleTabla7() {
+        var tablaContainer7 = document.getElementById("tablaContainer7");
+        if (tablaContainer7.style.display === "none") {
+            // Muestra la tabla
+            tablaContainer7.innerHTML = tablaHTML7; // Asigna el contenido HTML generado en JavaScript
+            tablaContainer7.style.display = "block";
+        } else {
+            // Oculta la tabla
+            tablaContainer7.innerHTML = ""; // Borra el contenido HTML
+            tablaContainer7.style.display = "none";
+        }
+    }
+
+    // Asociar la funcion al evento click del boton
+    document.getElementById("mostrarOcultar7").addEventListener("click", toggleTabla7);
+</script>        
+
+
+<!--JORNADA 8 ########################################################################################################################-->
+<script>   
+    // Calcular la tabla de enfrentamientos especificos
+    const enfrentamientos8 = [
+        { JugadorA: "Juan", JugadorB: "Oscar" },
+        { JugadorA: "Carmelo", JugadorB: "Victor" },
+        { JugadorA: "Sergio", JugadorB: "Jose" },
+        { JugadorA: "Jorge", JugadorB: "Marcos" },
+        { JugadorA: "Alex", JugadorB: "Ismael" }
+    ];
+    const tablaEnfrentamientosEspecificos8 = calcularTablaEnfrentamientosEspecificos(nombres, jornada8, enfrentamientos8, personasliga, estacion);
+
+    // Crear una tabla HTML con los resultados de los enfrentamientos especificos        
+    const tablaHTML8 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
+        tablaEnfrentamientosEspecificos8.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
+</script>
+<script>
+    // Funcion para mostrar/ocultar la tabla
+    function toggleTabla8() {
+        var tablaContainer8 = document.getElementById("tablaContainer8");
+        if (tablaContainer8.style.display === "none") {
+            // Muestra la tabla
+            tablaContainer8.innerHTML = tablaHTML8; // Asigna el contenido HTML generado en JavaScript
+            tablaContainer8.style.display = "block";
+        } else {
+            // Oculta la tabla
+            tablaContainer8.innerHTML = ""; // Borra el contenido HTML
+            tablaContainer8.style.display = "none";
+        }
+    }
+
+    // Asociar la funcion al evento click del boton
+    document.getElementById("mostrarOcultar8").addEventListener("click", toggleTabla8);
+</script>
+
+
+<!--JORNADA 9 ########################################################################################################################-->
+<script>
+    // Calcular la tabla de enfrentamientos especificos
+    const enfrentamientos9 = [
+        { JugadorA: "Juan", JugadorB: "Victor" },
+        { JugadorA: "Oscar", JugadorB: "Jose" },
+        { JugadorA: "Carmelo", JugadorB: "Marcos" },
+        { JugadorA: "Sergio", JugadorB: "Ismael" },
+        { JugadorA: "Jorge", JugadorB: "Alex" }
+    ];
+    const tablaEnfrentamientosEspecificos9 = calcularTablaEnfrentamientosEspecificos(nombres, jornada9, enfrentamientos9, personasliga, estacion);
+
+    // Crear una tabla HTML con los resultados de los enfrentamientos especificos        
+    const tablaHTML9 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
+        tablaEnfrentamientosEspecificos9.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
+</script>
+<script>
+    // Funcion para mostrar/ocultar la tabla
+    function toggleTabla9() {
+        var tablaContainer9 = document.getElementById("tablaContainer9");
+        if (tablaContainer9.style.display === "none") {
+            // Muestra la tabla
+            tablaContainer9.innerHTML = tablaHTML9; // Asigna el contenido HTML generado en JavaScript
+            tablaContainer9.style.display = "block";
+        } else {
+            // Oculta la tabla
+            tablaContainer9.innerHTML = ""; // Borra el contenido HTML
+            tablaContainer9.style.display = "none";
+        }
+    }
+
+    // Asociar la funcion al evento click del boton
+    document.getElementById("mostrarOcultar9").addEventListener("click", toggleTabla9);
+</script>
+
+<!-- ESTACION 2222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222-->
+<script>estacion=2;</script>
+<!--JORNADA 10 ########################################################################################################################-->
+<script>
+    // Calcular la tabla de enfrentamientos especificos
+    const enfrentamientos10 = [
+        { JugadorA: "Marcos", JugadorB: "Victor" },
+        { JugadorA: "Alex", JugadorB: "Carmelo" },
+        { JugadorA: "Sergio", JugadorB: "Jorge" },
+        { JugadorA: "Ismael", JugadorB: "Oscar" },
+        { JugadorA: "Jose", JugadorB: "Juan" }
+    ];
+    const tablaEnfrentamientosEspecificos10 = calcularTablaEnfrentamientosEspecificos(nombres, jornada10, enfrentamientos10, personasliga, estacion);
+
+    // Crear una tabla HTML con los resultados de los enfrentamientos especificos
+    const tablaHTML10 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
+        tablaEnfrentamientosEspecificos10.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
+</script>
+<script>
+    // Funcion para mostrar/ocultar la tabla
+    function toggleTabla10() {
+        var tablaContainer10 = document.getElementById("tablaContainer10");
+        if (tablaContainer10.style.display === "none") {
+            // Muestra la tabla
+            tablaContainer10.innerHTML = tablaHTML10; // Asigna el contenido HTML generado en JavaScript
+            tablaContainer10.style.display = "block";
+        } else {
+            // Oculta la tabla
+            tablaContainer10.innerHTML = ""; // Borra el contenido HTML
+            tablaContainer10.style.display = "none";
+        }
+    }
+
+    // Asociar la funcion al evento click del boton
+    document.getElementById("mostrarOcultar10").addEventListener("click", toggleTabla10);
+</script>
+
+    
+<!--JORNADA 11 ########################################################################################################################-->
+<script>
+    // Calcular la tabla de enfrentamientos especificos
+    const enfrentamientos11 = [
+        { JugadorA: "Juan", JugadorB: "Marcos" },
+        { JugadorA: "Jose", JugadorB: "Ismael" },
+        { JugadorA: "Victor", JugadorB: "Alex" },
+        { JugadorA: "Oscar", JugadorB: "Jorge" },
+        { JugadorA: "Carmelo", JugadorB: "Sergio" }
+    ];
+    const tablaEnfrentamientosEspecificos11 = calcularTablaEnfrentamientosEspecificos(nombres, jornada11, enfrentamientos11, personasliga, estacion);
+
+    // Crear una tabla HTML con los resultados de los enfrentamientos especificos        
+    const tablaHTML11 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
+        tablaEnfrentamientosEspecificos11.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
+</script>
+<script>
+    // Funcion para mostrar/ocultar la tabla
+    function toggleTabla11() {
+        var tablaContainer11 = document.getElementById("tablaContainer11");
+        if (tablaContainer11.style.display === "none") {
+            // Muestra la tabla
+            tablaContainer11.innerHTML = tablaHTML11; // Asigna el contenido HTML generado en JavaScript
+            tablaContainer11.style.display = "block";
+        } else {
+            // Oculta la tabla
+            tablaContainer11.innerHTML = ""; // Borra el contenido HTML
+            tablaContainer11.style.display = "none";
+        }
+    }
+
+    // Asociar la funcion al evento click del boton
+    document.getElementById("mostrarOcultar11").addEventListener("click", toggleTabla11);
+</script>
+
+
+<!--JORNADA 12 ########################################################################################################################-->
+<script>
+    // Calcular la tabla de enfrentamientos especificos
+    const enfrentamientos12 = [
+        { JugadorA: "Juan", JugadorB: "Ismael" },
+        { JugadorA: "Marcos", JugadorB: "Alex" },
+        { JugadorA: "Jose", JugadorB: "Jorge" },
+        { JugadorA: "Victor", JugadorB: "Sergio" },
+        { JugadorA: "Oscar", JugadorB: "Carmelo" }
+    ];
+    const tablaEnfrentamientosEspecificos12 = calcularTablaEnfrentamientosEspecificos(nombres, jornada12, enfrentamientos12, personasliga, estacion);
+
+    // Crear una tabla HTML con los resultados de los enfrentamientos especificos       
+    const tablaHTML12 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
+        tablaEnfrentamientosEspecificos12.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
+    
+    // ligaResultados.innerHTML = tablaHTML;
+</script>
+<script>
+    // Funcion para mostrar/ocultar la tabla
+    function toggleTabla12() {
+        var tablaContainer12 = document.getElementById("tablaContainer12");
+        if (tablaContainer12.style.display === "none") {
+            // Muestra la tabla
+            tablaContainer12.innerHTML = tablaHTML12; // Asigna el contenido HTML generado en JavaScript
+            tablaContainer12.style.display = "block";
+        } else {
+            // Oculta la tabla
+            tablaContainer12.innerHTML = ""; // Borra el contenido HTML
+            tablaContainer12.style.display = "none";
+        }
+    }
+
+    // Asociar la funcion al evento click del boton
+    document.getElementById("mostrarOcultar12").addEventListener("click", toggleTabla12);
+</script>
+    
+
+<!--JORNADA 13 ########################################################################################################################-->
+<script>
+    // Calcular la tabla de enfrentamientos especificos
+    const enfrentamientos13 = [
+        { JugadorA: "Juan", JugadorB: "Alex" },
+        { JugadorA: "Ismael", JugadorB: "Jorge" },
+        { JugadorA: "Marcos", JugadorB: "Sergio" },
+        { JugadorA: "Jose", JugadorB: "Carmelo" },
+        { JugadorA: "Victor", JugadorB: "Oscar" }
+    ];
+    const tablaEnfrentamientosEspecificos13 = calcularTablaEnfrentamientosEspecificos(nombres, jornada13, enfrentamientos13, personasliga, estacion);
+
+    // Crear una tabla HTML con los resultados de los enfrentamientos especificos        
+    const tablaHTML13 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
+        tablaEnfrentamientosEspecificos13.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
+</script>   
+<script>
+    // Funcion para mostrar/ocultar la tabla
+    function toggleTabla13() {
+        var tablaContainer13 = document.getElementById("tablaContainer13");
+        if (tablaContainer13.style.display === "none") {
+            // Muestra la tabla
+            tablaContainer13.innerHTML = tablaHTML13; // Asigna el contenido HTML generado en JavaScript
+            tablaContainer13.style.display = "block";
+        } else {
+            // Oculta la tabla
+            tablaContainer13.innerHTML = ""; // Borra el contenido HTML
+            tablaContainer13.style.display = "none";
+        }
+    }
+
+    // Asociar la funcion al evento click del boton
+    document.getElementById("mostrarOcultar13").addEventListener("click", toggleTabla13);
+</script>
+
+
+<!--JORNADA 14 ########################################################################################################################-->
+<script>
+    // Calcular la tabla de enfrentamientos especificos
+    const enfrentamientos14 = [
+        { JugadorA: "Juan", JugadorB: "Jorge" },
+        { JugadorA: "Alex", JugadorB: "Sergio" },
+        { JugadorA: "Ismael", JugadorB: "Carmelo" },
+        { JugadorA: "Marcos", JugadorB: "Oscar" },
+        { JugadorA: "Jose", JugadorB: "Victor" }
+    ];
+    const tablaEnfrentamientosEspecificos14 = calcularTablaEnfrentamientosEspecificos(nombres, jornada14, enfrentamientos14, personasliga, estacion);
+
+    // Crear una tabla HTML con los resultados de los enfrentamientos especificos - Propiedad intelectual de Jose Miguel Sualdea Serrano -        
+    const tablaHTML14 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
+        tablaEnfrentamientosEspecificos14.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
+</script>    
+<script>
+    // Funcion para mostrar/ocultar la tabla
+    function toggleTabla14() {
+        var tablaContainer14 = document.getElementById("tablaContainer14");
+        if (tablaContainer14.style.display === "none") {
+            // Muestra la tabla
+            tablaContainer14.innerHTML = tablaHTML14; // Asigna el contenido HTML generado en JavaScript
+            tablaContainer14.style.display = "block";
+        } else {
+            // Oculta la tabla
+            tablaContainer14.innerHTML = ""; // Borra el contenido HTML
+            tablaContainer14.style.display = "none";
+        }
+    }
+
+    // Asociar la funcion al evento click del boton
+    document.getElementById("mostrarOcultar14").addEventListener("click", toggleTabla14);
+</script>
+
+
+<!--JORNADA 15 ########################################################################################################################-->
+<script>    
+    // Calcular la tabla de enfrentamientos especificos
+    const enfrentamientos15 = [
+        { JugadorA: "Juan", JugadorB: "Sergio" },
+        { JugadorA: "Jorge", JugadorB: "Carmelo" },
+        { JugadorA: "Alex", JugadorB: "Oscar" },
+        { JugadorA: "Ismael", JugadorB: "Victor" },
+        { JugadorA: "Marcos", JugadorB: "Jose" }
+    ];
+    const tablaEnfrentamientosEspecificos15 = calcularTablaEnfrentamientosEspecificos(nombres, jornada15, enfrentamientos15, personasliga, estacion);
+
+    // Crear una tabla HTML con los resultados de los enfrentamientos especificos        
+    const tablaHTML15 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
+        tablaEnfrentamientosEspecificos15.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
+</script>
+<script>
+    // Funcion para mostrar/ocultar la tabla
+    function toggleTabla15() {
+        var tablaContainer15 = document.getElementById("tablaContainer15");
+        if (tablaContainer15.style.display === "none") {
+            // Muestra la tabla
+            tablaContainer15.innerHTML = tablaHTML15; // Asigna el contenido HTML generado en JavaScript
+            tablaContainer15.style.display = "block";
+        } else {
+            // Oculta la tabla
+            tablaContainer15.innerHTML = ""; // Borra el contenido HTML
+            tablaContainer15.style.display = "none";
+        }
+    }
+
+    // Asociar la funcion al evento click del boton
+    document.getElementById("mostrarOcultar15").addEventListener("click", toggleTabla15);
+</script>
+
+
+<!--JORNADA 16 ########################################################################################################################-->
+<script>    
+    // Calcular la tabla de enfrentamientos especificos
+    const enfrentamientos16 = [
+        { JugadorA: "Juan", JugadorB: "Carmelo" },
+        { JugadorA: "Sergio", JugadorB: "Oscar" },
+        { JugadorA: "Jorge", JugadorB: "Victor" },
+        { JugadorA: "Alex", JugadorB: "Jose" },
+        { JugadorA: "Ismael", JugadorB: "Marcos" }
+    ];
+    const tablaEnfrentamientosEspecificos16 = calcularTablaEnfrentamientosEspecificos(nombres, jornada16, enfrentamientos16, personasliga, estacion);
+
+    // Crear una tabla HTML con los resultados de los enfrentamientos especificos        
+    const tablaHTML16 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
+        tablaEnfrentamientosEspecificos16.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
+</script>
+<script>
+    // Funcion para mostrar/ocultar la tabla
+    function toggleTabla16() {
+        var tablaContainer16 = document.getElementById("tablaContainer16");
+        if (tablaContainer16.style.display === "none") {
+            // Muestra la tabla
+            tablaContainer16.innerHTML = tablaHTML16; // Asigna el contenido HTML generado en JavaScript
+            tablaContainer16.style.display = "block";
+        } else {
+            // Oculta la tabla
+            tablaContainer16.innerHTML = ""; // Borra el contenido HTML
+            tablaContainer16.style.display = "none";
+        }
+    }
+
+    // Asociar la funcion al evento click del boton
+    document.getElementById("mostrarOcultar16").addEventListener("click", toggleTabla16);
+</script>        
+
+
+<!--JORNADA 17 ########################################################################################################################-->
+<script>   
+    // Calcular la tabla de enfrentamientos especificos
+    const enfrentamientos17 = [
+        { JugadorA: "Juan", JugadorB: "Oscar" },
+        { JugadorA: "Carmelo", JugadorB: "Victor" },
+        { JugadorA: "Sergio", JugadorB: "Jose" },
+        { JugadorA: "Jorge", JugadorB: "Marcos" },
+        { JugadorA: "Alex", JugadorB: "Ismael" }
+    ];
+    const tablaEnfrentamientosEspecificos17 = calcularTablaEnfrentamientosEspecificos(nombres, jornada17, enfrentamientos17, personasliga, estacion);
+
+    // Crear una tabla HTML con los resultados de los enfrentamientos especificos        
+    const tablaHTML17 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
+        tablaEnfrentamientosEspecificos17.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
+</script>
+<script>
+    // Funcion para mostrar/ocultar la tabla
+    function toggleTabla17() {
+        var tablaContainer17 = document.getElementById("tablaContainer17");
+        if (tablaContainer17.style.display === "none") {
+            // Muestra la tabla
+            tablaContainer17.innerHTML = tablaHTML17; // Asigna el contenido HTML generado en JavaScript
+            tablaContainer17.style.display = "block";
+        } else {
+            // Oculta la tabla
+            tablaContainer17.innerHTML = ""; // Borra el contenido HTML
+            tablaContainer17.style.display = "none";
+        }
+    }
+
+    // Asociar la funcion al evento click del boton
+    document.getElementById("mostrarOcultar17").addEventListener("click", toggleTabla17);
+</script>
+
+
+<!--JORNADA 18 ########################################################################################################################-->
+<script>
+    // Calcular la tabla de enfrentamientos especificos
+    const enfrentamientos18 = [
+        { JugadorA: "Juan", JugadorB: "Victor" },
+        { JugadorA: "Oscar", JugadorB: "Jose" },
+        { JugadorA: "Carmelo", JugadorB: "Marcos" },
+        { JugadorA: "Sergio", JugadorB: "Ismael" },
+        { JugadorA: "Jorge", JugadorB: "Alex" }
+    ];
+    const tablaEnfrentamientosEspecificos18 = calcularTablaEnfrentamientosEspecificos(nombres, jornada18, enfrentamientos18, personasliga, estacion);
+
+    // Crear una tabla HTML con los resultados de los enfrentamientos especificos        
+    const tablaHTML18 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
+        tablaEnfrentamientosEspecificos18.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
+</script>
+<script>
+    // Funcion para mostrar/ocultar la tabla
+    function toggleTabla18() {
+        var tablaContainer18 = document.getElementById("tablaContainer18");
+        if (tablaContainer18.style.display === "none") {
+            // Muestra la tabla
+            tablaContainer18.innerHTML = tablaHTML18; // Asigna el contenido HTML generado en JavaScript
+            tablaContainer18.style.display = "block";
+        } else {
+            // Oculta la tabla
+            tablaContainer18.innerHTML = ""; // Borra el contenido HTML
+            tablaContainer18.style.display = "none";
+        }
+    }
+
+    // Asociar la funcion al evento click del boton
+    document.getElementById("mostrarOcultar18").addEventListener("click", toggleTabla18);
+</script>
+</p>
+
+<!-- CLASIFICACION MISTER GLOBAL ------------------------------------------------------- -->
+<div class="contenedor-tablas">
+    <table bgcolor="lightyellow">
+        <tr>
+            <th width="45%" bgcolor="lightgreen">JUGADOR</th>
+            <th width="45%" bgcolor="lightgreen">PUNTOS MISTER</th>
+        </tr>
+        <tbody id="tablaPersonas"></tbody>
+    </table>
+
+    <script>
+        // Crear un arreglo de objetos que contienen nombres y edades
+        const personas = [
+            { nombre: "", edad: "" },
+            { nombre: "", edad: "" },
+            { nombre: "", edad: "" },  // Cambiar "a" por "b"
+            { nombre: "", edad: "" },
+            { nombre: "", edad: "" },
+            { nombre: "", edad: "" },
+            { nombre: "", edad: "" },
+            { nombre: "", edad: "" },
+            { nombre: "", edad: "" },
+            { nombre: "", edad: "" }
+        ];
+
+        // Cambiar el nombre de la tercera persona
+        x=0;
+        while (x<10){
+            personas[x].nombre = nombres[x];
+            personas[x].edad= jornada1[x]+jornada2[x]+jornada3[x]+jornada4[x]+jornada5[x]+jornada6[x]+jornada7[x]+jornada8[x]+jornada9[x]+jornada10[x]+jornada11[x]+jornada12[x]+jornada13[x]+jornada14[x]+jornada15[x]+jornada16[x]+jornada17[x]+jornada18[x];
+            x+=1;
+        }
+    
+        // Funcion de comparacion para ordenar por edad
+        function compararPorEdad(a, b) {
+            return b.edad - a.edad;
+        }
+
+        // Ordenar la lista de personas por edad
+        personas.sort(compararPorEdad);
+        
+
+        var tablaPersonas = document.getElementById("tablaPersonas");
+
+        personas.forEach(function (persona) {
+            var row = document.createElement("tr");
+            var cellNombre = document.createElement("td");
+            var cellEdad = document.createElement("td");
+
+            cellNombre.textContent = persona.nombre;
+            cellEdad.textContent = persona.edad;
+
+            row.appendChild(cellNombre);
+            row.appendChild(cellEdad);
+
+            tablaPersonas.appendChild(row);
+        });
+        
+    </script>
+
+    <table></table>
+    <!--    Putnos liga insercion-->
+    <table bgcolor="lightyellow">
+        <tr>
+            <th width="45%" bgcolor="lightgreen">JUGADOR</th>
+            <th width="45%" bgcolor="lightgreen">PUNTOS LIGA</th>
+        </tr>
+        <tbody id="tablaLiguilla"></tbody>        
+    </table>
+</div>
+
+<script>
+    function compararPorGlobalLiga(a, b) {
+        return b.globaliga - a.globaliga;
+    }
+    personasliga.sort(compararPorGlobalLiga);
+
+
+    var tablaPersonitas = document.getElementById("tablaLiguilla");
+
+
+    personasliga.forEach(function (personaliga) {
+        var fila = document.createElement("tr");
+        var cellNombrel = document.createElement("td");
+        var cellGlobaliga = document.createElement("td");
+
+        cellNombrel.textContent = personaliga.nombrel;
+        cellGlobaliga.textContent = personaliga.globaliga;
+
+        fila.appendChild(cellNombrel);
+        fila.appendChild(cellGlobaliga);
+
+        tablaPersonitas.appendChild(fila);
+    });
+    
+</script>
+
+
+
+
+
+<p></p>
+
+
+<!--    Putnos SEASON 1 insercion-->
+<div class="contenedor-tablasdos">
+<table bgcolor="lightyellow">
+    <tr>
+        <th width="45%" bgcolor="yellow">CLASIFICACIÓN</th>
+        <th width="45%" bgcolor="yellow">VERANO</th>
+    </tr>
+    <tbody id="tablaSeasonUno"></tbody>        
+</table>
+
+
+<script>
+    function compararPorSeasonUno(a, b) {
+        return b.season1 - a.season1;
+    }
+    personasliga.sort(compararPorSeasonUno);
+
+
+    var tablaPersonitas = document.getElementById("tablaSeasonUno");
+
+
+    personasliga.forEach(function (personaliga) {
+        var fila = document.createElement("tr");
+        var cellNombrel = document.createElement("td");
+        var cellGlobaliga = document.createElement("td");
+
+        cellNombrel.textContent = personaliga.nombrel;
+        cellGlobaliga.textContent = personaliga.season1;
+
+        fila.appendChild(cellNombrel);
+        fila.appendChild(cellGlobaliga);
+
+        tablaPersonitas.appendChild(fila);
+    });
+    
+</script>
+
+<!--    Putnos SEASON 2 insercion-->
+<table bgcolor="lightyellow">
+    <tr>
+        <th width="45%" bgcolor=#F4A460>CLASIFICACIÓN</th>
+        <th width="45%" bgcolor=#F4A460>OTOÑO</th>
+    </tr>
+    <tbody id="tablaSeasonDos"></tbody>        
+</table>
+
+
+<script>
+    function compararPorSeasonDos(a, b) {
+        return b.season2 - a.season2;
+    }
+    personasliga.sort(compararPorSeasonDos);
+
+
+    var tablaPersonitas = document.getElementById("tablaSeasonDos");
+
+
+    personasliga.forEach(function (personaliga) {
+        var fila = document.createElement("tr");
+        var cellNombrel = document.createElement("td");
+        var cellGlobaliga = document.createElement("td");
+
+        cellNombrel.textContent = personaliga.nombrel;
+        cellGlobaliga.textContent = personaliga.season2;
+
+        fila.appendChild(cellNombrel);
+        fila.appendChild(cellGlobaliga);
+
+        tablaPersonitas.appendChild(fila);
+    });
+    
+</script>
+<!--    Putnos SEASON 3 insercion-->
+<table bgcolor="lightyellow">
+    <tr>
+        <th width="45%" bgcolor="lightblue">CLASIFICACIÓN</th>
+        <th width="45%" bgcolor="lightblue">INVIERNO</th>
+    </tr>
+    <tbody id="tablaSeasonTres"></tbody>        
+</table>
+
+
+<script>
+    function compararPorSeasonTres(a, b) {
+        return b.season3 - a.season3;
+    }
+    personasliga.sort(compararPorSeasonTres);
+
+
+    var tablaPersonitas = document.getElementById("tablaSeasonTres");
+
+
+    personasliga.forEach(function (personaliga) {
+        var fila = document.createElement("tr");
+        var cellNombrel = document.createElement("td");
+        var cellGlobaliga = document.createElement("td");
+
+        cellNombrel.textContent = personaliga.nombrel;
+        cellGlobaliga.textContent = personaliga.season3;
+
+        fila.appendChild(cellNombrel);
+        fila.appendChild(cellGlobaliga);
+
+        tablaPersonitas.appendChild(fila);
+    });
+    
+</script>
+<!--    Putnos SEASON 4 insercion-->
+<table bgcolor="lightyellow">
+    <tr>
+        <th width="45%" bgcolor=#00FF00>CLASIFICACIÓN</th>
+        <th width="45%" bgcolor=#00FF00>PRIMAVERA</th>
+    </tr>
+    <tbody id="tablaSeasonCuatro"></tbody>        
+</table>
+
+
+<script>
+    function compararPorSeasonCuatro(a, b) {
+        return b.season4 - a.season4;
+    }
+    personasliga.sort(compararPorSeasonCuatro);
+
+
+    var tablaPersonitas = document.getElementById("tablaSeasonCuatro");
+
+
+    personasliga.forEach(function (personaliga) {
+        var fila = document.createElement("tr");
+        var cellNombrel = document.createElement("td");
+        var cellGlobaliga = document.createElement("td");
+
+        cellNombrel.textContent = personaliga.nombrel;
+        cellGlobaliga.textContent = personaliga.season4;
+
+        fila.appendChild(cellNombrel);
+        fila.appendChild(cellGlobaliga);
+
+        tablaPersonitas.appendChild(fila);
+    });
+    
+</script>
+
+</div>
+
+</body>
+
+
+
+
+
+<!-- Notas a pie d pagina
+
+-   Si en algun momento algo empieza a fallar, tener en cuenta que cuando se llama 
+a la funcion de calcular los puntos de liga, se hace enviando una funcion de tabla 
+con el mismo nombre que tiene de normal, y no devolvemos los resultados a la tabla
+por lo que se supone que no deberia de cambiarmelos pero como tienen el mismo nombre
+al parecer si que me lo esta haciendo. Sinceramente soy consciente del error pero me
+ha dao palo arreglarlo y como buen programador, si funciona, asi se queda xd.   -->
+</html>
