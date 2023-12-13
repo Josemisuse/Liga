@@ -15,13 +15,20 @@
             color: rgba(0, 0, 0, 0.861);
         }
         h1 {
+            background-color: rgba(255, 255, 255, 0.5);
+            text-align: center;
             font-size: 40px;
             color: white;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+            width:33%;
         }
         .contenedor-tablas {
             display: flex;
             justify-content: center; /* Ajusta la alineación horizontal según tus necesidades */
+        }
+        .contenedor-titulos {
+            display: flex;
+            justify-content: left; /* Ajusta la alineación horizontal según tus necesidades */
         }
         .contenedor-tablasdos {
             display: flex;
@@ -34,7 +41,11 @@
     </style>
 </head>
 <body bgcolor="lightblue">
-    <h1>Resultados de la Liga</h1>
+    <div class="contenedor-titulos">
+        <h1>Resultados de la Liga</h1>
+        <h1>Temporadas</h1>
+        <h1>Dineros</h1>
+    </div>
     <div id="ligaResultados"></div>
 
 
