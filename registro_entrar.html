@@ -12,7 +12,51 @@
 </head>
 
 <body bgcolor="lightblue">
-
+<?PHP
+//----------------------------------------------------------------
+if (isset ($_REQUEST["insertar"])) {
+	require_once "insertar.php";
+}
+else if (isset ($_REQUEST["insertar2"])) {
+	require_once "insertar2.php";
+}
+else if (isset ($_REQUEST["insertar3"])) {
+	require_once "insertar3.php";
+}
+//----------------------------------------------------------------
+else if (isset ($_REQUEST["listar"])) {
+	require_once "listar.php";
+}
+//----------------------------------------------------------------
+else if (isset ($_REQUEST["buscar"])) {
+	require_once "buscar.php";
+}
+else if (isset ($_REQUEST["buscar2"])) {
+	require_once "buscar2.php";
+}
+//----------------------------------------------------------------
+else if (isset ($_REQUEST["borrar"])) {
+	require_once "borrar.php";
+}
+else if (isset ($_REQUEST["borrar2"])) {
+	require_once "borrar2.php";
+}
+//----------------------------------------------------------------
+else if (isset ($_REQUEST["actualizar"])) {
+	require_once "actualizar.php";
+}
+else if (isset ($_REQUEST["actualizar2"])) {
+	require_once "actualizar2.php";
+}
+//----------------------------------------------------------------
+else if (isset ($_REQUEST["index"])) {
+	require_once "index.php";
+}
+//----------------------------------------------------------------
+else if (isset ($_REQUEST["pagina"])) {
+	require_once "dos_enlaces.php";
+}
+?>	
 <div align="center" class="a" >
 	<div>
 		<img src="candado2.png">
