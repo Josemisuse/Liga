@@ -1,0 +1,13 @@
+Premios:
+	- Ganador de la liga
+	- Ganador Verano
+	- Ganador Invierno
+	- Ganador Primavera
+	- Ganador verano
+	- Mejor jornada
+	- Peor jornada (Consolacion)
+	- Jornada ganada con menos puntos
+	- Jornada perdida con mas puntos (consolacion)
+	- Fichaje mas caro
+	- Clausulazo mas alto
+	- El mas generoso (Consolacion (El que mas paga))
