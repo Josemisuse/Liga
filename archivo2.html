@@ -4,44 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Archivo 2</title>
-    <script src="archivo1.html"></script> <!-- Incluir archivo1.html para acceder a las variables -->
-    <script>
-        // Recuperar las tablas desde archivo1.html
-        var personasTabla1 = tabla1.slice(); // Copiar para no modificar la original
-        var personasTabla2 = tabla2.slice(); // Copiar para no modificar la original
-
-        // Ordenar las tablas por edad de mayor a menor
-        personasTabla1.sort((a, b) => b.edad - a.edad);
-        personasTabla2.sort((a, b) => b.edad - a.edad);
-
-        // Mostrar las tres personas más mayores de cada tabla
-        document.addEventListener("DOMContentLoaded", function() {
-            mostrarPersonasMayores(personasTabla1.slice(0, 3), "tabla1");
-            mostrarPersonasMayores(personasTabla2.slice(0, 3), "tabla2");
-        });
-
-        function mostrarPersonasMayores(personas, tablaId) {
-            var container = document.getElementById("contenido");
-            var titulo = document.createElement("h2");
-            titulo.textContent = "Tabla " + tablaId;
-            container.appendChild(titulo);
-
-            var tabla = document.createElement("table");
-            var encabezado = document.createElement("tr");
-            encabezado.innerHTML = "<th>Nombre</th><th>Edad</th>";
-            tabla.appendChild(encabezado);
-
-            personas.forEach(function(persona) {
-                var fila = document.createElement("tr");
-                fila.innerHTML = "<td>" + persona.nombre + "</td><td>" + persona.edad + "</td>";
-                tabla.appendChild(fila);
-            });
-
-            container.appendChild(tabla);
-        }
-    </script>
 </head>
 <body>
-    <div id="contenido"></div>
+    <script type="module">
+        import { nombres, personasliga } from './index.html';
+
+        // Ahora puedes trabajar con las variables en archivo2.html
+        console.log(nombres);
+        console.log(personasliga);
+    </script>
 </body>
 </html>
