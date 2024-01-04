@@ -5,9 +5,11 @@ Premios:
 	- Ganador Primavera
 	- Ganador verano
 	- Mejor jornada
-	- Peor jornada (Consolacion)
+	- Peor jornada (consolacion)
 	- Jornada ganada con menos puntos
 	- Jornada perdida con mas puntos (consolacion)
 	- Fichaje mas caro
 	- Clausulazo mas alto
-	- El mas generoso (Consolacion (El que mas paga))
+	- El mas generoso (consolacion (el que mas paga))
+
+Hacer una ventana de "Jugadores" donde puedan ver sus puntos y los premios a los que estan nominados (se nomina al top 4 por premio)
