@@ -12,6 +12,29 @@
         // Ahora puedes trabajar con las variables en archivo2.html
         console.log(nombres);
         console.log(personasliga);
+        function compararPorSeasonCuatro(a, b) {
+            return b.season4 - a.season4;
+        }
+        personasliga.sort(compararPorSeasonCuatro);
+
+
+        var tablaPersonitas = document.getElementById("tablaSeasonCuatro");
+
+
+        personasliga.forEach(function (personaliga) {
+            var fila = document.createElement("tr");
+            var cellNombrel = document.createElement("td");
+            var cellGlobaliga = document.createElement("td");
+
+            cellNombrel.textContent = personaliga.nombrel;
+            cellGlobaliga.textContent = personaliga.season4;
+
+            fila.appendChild(cellNombrel);
+            fila.appendChild(cellGlobaliga);
+
+            tablaPersonitas.appendChild(fila);
+        });
+    
     </script>
 </body>
 </html>
