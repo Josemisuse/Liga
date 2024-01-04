@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Archivo 22</title>
-    <script src="archivo1.html"></script> <!-- Incluir archivo1.html para acceder a la variable -->
+    <title>Archivo 2</title>
     <script>
-        // Acceder a la variable definida en archivo1.html
-        var contenidoVariable = miVariable;
+        // Recuperar la variable desde localStorage
+        var nombreRecuperado = localStorage.getItem("miNombre");
 
-        // Actualizar el DOM para mostrar el contenido de la variable
+        // Mostrar el contenido en el DOM al cargar la página
         document.addEventListener("DOMContentLoaded", function() {
-            document.getElementById("contenido").innerText = contenidoVariable;
+            document.getElementById("contenido").innerText = "Nombre: " + nombreRecuperado;
         });
     </script>
 </head>
