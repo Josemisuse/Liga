@@ -3,60 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabla de Personas</title>
+    <title>Archivo22</title>
 </head>
 <body>
-    <h1>Tabla de Personas 3</h1>
-
-    <!-- Contenedor para la tabla -->
-    <div id="tabla-container"></div>
-
     <script>
         // URL del archivo en GitHub Raw
-        var urlArchivo1 = 'https://josemisuse.github.io/Liga/archivo1.html';
+        var urlArchivo1 = 'https://raw.githubusercontent.com/TuUsuario/TuRepositorio/rama/ruta/al/archivo1.html';
 
-        // Obtener el contenido del archivo usando fetch
-        fetch(urlArchivo1)
-            .then(response => response.text())
-            .then(data => {
-                // Crear un contenedor temporal para insertar el código HTML
-                var tempContainer = document.createElement('div');
-                tempContainer.innerHTML = data;
+        // Función para cargar variables desde un archivo
+        function cargarVariables(urlArchivo, variableName1, variableName2) {
+            return fetch(urlArchivo)
+                .then(response => response.text())
+                .then(data => {
+                    var tempContainer = document.createElement('div');
+                    tempContainer.innerHTML = data;
 
-                // Obtener la referencia a la variable global personas definida en archivo1.html
-                var personas = tempContainer.querySelector('script').textContent;
+                    // Obtener el contenido del script del archivo cargado
+                    var scriptContent = tempContainer.querySelector('script').textContent;
 
-                // Evaluar el contenido del script para obtener los datos
-                eval(personas);
+                    // Evaluar el contenido del script para obtener las variables
+                    eval(scriptContent);
 
-                // Obtener la referencia al contenedor de la tabla
-                var tablaContainer = document.getElementById('tabla-container');
+                    // Retornar las variables en un objeto
+                    return {
+                        variable1: window[variableName1],
+                        variable2: window[variableName2]
+                    };
+                })
+                .catch(error => {
+                    console.error('Error al cargar el archivo:', error);
+                    return null;
+                });
+        }
 
-                // Crear la tabla y agregarla al contenedor
-                var tabla = document.createElement('table');
-                tabla.border = '1';
+        // Cargar variables de archivo1.html
+        cargarVariables(urlArchivo1, 'variable1', 'variable2')
+            .then(resultados => {
+                // resultados.variable1 contendrá el valor de variable1
+                // resultados.variable2 contendrá el valor de variable2
 
-                // Crear la fila de encabezado
-                var encabezado = tabla.createTHead();
-                var filaEncabezado = encabezado.insertRow();
-                var celdaNombre = filaEncabezado.insertCell(0);
-                var celdaEdad = filaEncabezado.insertCell(1);
-                celdaNombre.innerHTML = '<b>Nombre</b>';
-                celdaEdad.innerHTML = '<b>Edad</b>';
-
-                // Llenar la tabla con datos de personas
-                for (var i = 0; i < personas.length; i++) {
-                    var fila = tabla.insertRow();
-                    var celda1 = fila.insertCell(0);
-                    var celda2 = fila.insertCell(1);
-                    celda1.innerHTML = personas[i].nombre;
-                    celda2.innerHTML = personas[i].edad;
-                }
-
-                // Agregar la tabla al contenedor
-                tablaContainer.appendChild(tabla);
-            })
-            .catch(error => console.error('Error al cargar el archivo:', error));
+                // Puedes hacer lo que necesites con las variables aquí
+                console.log('Variable 1:', resultados.variable1);
+                console.log('Variable 2:', resultados.variable2);
+            });
     </script>
 </body>
 </html>
