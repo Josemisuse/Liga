@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de Personas</title>
+</head>
+<body>
+    <h1>Tabla de Personas 3</h1>
+
+    <!-- Contenedor para la tabla -->
+    <div id="tabla-container"></div>
+
+    <script>
+        // URL del archivo en GitHub Raw
+        var urlArchivo1 = 'https://josemisuse.github.io/Liga/clasificacion.html';
+
+        // Obtener el contenido del archivo usando fetch
+        fetch(urlArchivo1)
+            .then(response => response.text())
+            .then(data => {
+                function compararPorSeasonCuatro(a, b) {
+                    return b.season4 - a.season4;
+                }
+                personasliga.sort(compararPorSeasonCuatro);
+
+
+                var tablaPersonitas = document.getElementById("tablaSeasonCuatro");
+
+
+                personasliga.forEach(function (personaliga) {
+                    var fila = document.createElement("tr");
+                    var cellNombrel = document.createElement("td");
+                    var cellGlobaliga = document.createElement("td");
+
+                    cellNombrel.textContent = personaliga.nombrel;
+                    cellGlobaliga.textContent = personaliga.season4;
+
+                    fila.appendChild(cellNombrel);
+                    fila.appendChild(cellGlobaliga);
+
+                    tablaPersonitas.appendChild(fila);
+                });
+            .catch(error => console.error('Error al cargar el archivo:', error));
+    </script>
+</body>
+</html>
