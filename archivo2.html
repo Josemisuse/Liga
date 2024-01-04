@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de Personas</title>
+</head>
+<body>
+    <h1>Tabla de Personas</h1>
+
+    <!-- Contenedor para la tabla -->
+    <div id="tabla-container"></div>
+
+    <script>
+        // Obtener la referencia a la tabla-container
+        var tablaContainer = document.getElementById('tabla-container');
+
+        // Crear la tabla y agregarla al contenedor
+        var tabla = document.createElement('table');
+        tabla.border = '1';
+
+        // Crear la fila de encabezado
+        var encabezado = tabla.createTHead();
+        var filaEncabezado = encabezado.insertRow();
+        var celdaNombre = filaEncabezado.insertCell(0);
+        var celdaEdad = filaEncabezado.insertCell(1);
+        celdaNombre.innerHTML = '<b>Nombre</b>';
+        celdaEdad.innerHTML = '<b>Edad</b>';
+
+        // Llenar la tabla con datos de personas
+        for (var i = 0; i < personas.length; i++) {
+            var fila = tabla.insertRow();
+            var celda1 = fila.insertCell(0);
+            var celda2 = fila.insertCell(1);
+            celda1.innerHTML = personas[i].nombre;
+            celda2.innerHTML = personas[i].edad;
+        }
+
+        // Agregar la tabla al contenedor
+        tablaContainer.appendChild(tabla);
+    </script>
+</body>
+</html>
