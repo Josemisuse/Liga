@@ -4,20 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Archivo 1</title>
-    <script>
-        // Definir las tablas con personas y edades
-        var tabla1 = [
-            { nombre: "Persona1", edad: 25 },
-            { nombre: "Persona2", edad: 30 },
-            // ... (agrega las otras personas y edades)
-        ];
-
-        var tabla2 = [
-            { nombre: "PersonaA", edad: 22 },
-            { nombre: "PersonaB", edad: 35 },
-            // ... (agrega las otras personas y edades)
-        ];
-    </script>
+   <script>
+    const datos = {
+        nombres: ["Alex", "Carmelo", "Ismael", "Jorge", "Jose", "Juan", "Marcos", "Oscar", "Sergio", "Victor"],
+        personasliga: [
+            { nombrel: "Alex", globaliga: 0, season1: 0, season2: 0, season3: 0, season4: 0 },
+            // ... (resto de las personas)
+        ]
+    };
+    localStorage.setItem('datos', JSON.stringify(datos));
+</script>
 </head>
 <body>
     <!-- Contenido de archivo1.html -->
