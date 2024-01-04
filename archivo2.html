@@ -6,20 +6,26 @@
     <title>Archivo 2</title>
 </head>
 <body>
-    <script type="module">
-        import { nombres, personasliga } from './index.html';
+    <table bgcolor="lightyellow">
+        <tr>
+            <th width="45%" bgcolor=#00FF00>CLASIFICACIÓN</th>
+            <th width="45%" bgcolor=#00FF00>PRIMAVERA</th>
+        </tr>
+        <tbody id="tablaSeasonCuatro"></tbody>        
+    </table>
+    <script>
+        // Recupera las variables desde localStorage
+        const datos = JSON.parse(localStorage.getItem('datos'));
+        const nombres = datos.nombres;
+        const personasliga = datos.personasliga;
 
-        // Ahora puedes trabajar con las variables en archivo2.html
-        console.log(nombres);
-        console.log(personasliga);
         function compararPorSeasonCuatro(a, b) {
             return b.season4 - a.season4;
         }
+
         personasliga.sort(compararPorSeasonCuatro);
 
-
         var tablaPersonitas = document.getElementById("tablaSeasonCuatro");
-
 
         personasliga.forEach(function (personaliga) {
             var fila = document.createElement("tr");
@@ -34,7 +40,6 @@
 
             tablaPersonitas.appendChild(fila);
         });
-    
     </script>
 </body>
 </html>
