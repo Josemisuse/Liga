@@ -3,14 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Archivo 2</title>
+    <title>Archivo 22</title>
     <script src="archivo1.html"></script> <!-- Incluir archivo1.html para acceder a la variable -->
     <script>
         // Acceder a la variable definida en archivo1.html
-        console.log(miVariable);
+        var contenidoVariable = miVariable;
+
+        // Actualizar el DOM para mostrar el contenido de la variable
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("contenido").innerText = contenidoVariable;
+        });
     </script>
 </head>
 <body>
-    <!-- Contenido de archivo2.html -->
+    <h1>Contenido de la variable:</h1>
+    <p id="contenido"></p>
 </body>
 </html>
