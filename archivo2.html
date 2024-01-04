@@ -1,51 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Archivo22</title>
+    <title>Archivo 2</title>
 </head>
 <body>
+    <!-- Contenido de archivo2.html -->
     <script>
-        // URL del archivo en GitHub Raw
-        var urlArchivo1 = 'https://josemisuse.github.io/Liga/archivo1';
-
-        // Función para cargar variables desde un archivo
-        function cargarVariables(urlArchivo, variableName1, variableName2) {
-            return fetch(urlArchivo)
-                .then(response => response.text())
-                .then(data => {
-                    var tempContainer = document.createElement('div');
-                    tempContainer.innerHTML = data;
-
-                    // Obtener el contenido del script del archivo cargado
-                    var scriptContent = tempContainer.querySelector('script').textContent;
-
-                    // Evaluar el contenido del script para obtener las variables
-                    eval(scriptContent);
-
-                    // Retornar las variables en un objeto
-                    return {
-                        variable1: window[variableName1],
-                        variable2: window[variableName2]
-                    };
-                })
-                .catch(error => {
-                    console.error('Error al cargar el archivo:', error);
-                    return null;
-                });
-        }
-
-        // Cargar variables de archivo1.html
-        cargarVariables(urlArchivo1, 'variable1', 'variable2')
-            .then(resultados => {
-                // resultados.variable1 contendrá el valor de variable1
-                // resultados.variable2 contendrá el valor de variable2
-
-                // Puedes hacer lo que necesites con las variables aquí
-                console.log('Variable 1:', resultados.variable1);
-                console.log('Variable 2:', resultados.variable2);
-            });
+        // Ahora puedes acceder a miVariable aquí
+        console.log(miVariable);
     </script>
 </body>
 </html>
