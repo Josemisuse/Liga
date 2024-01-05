@@ -1,45 +1,62 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Archivo 2</title>
+    <title>Tabla de Personas</title>
 </head>
 <body>
-    <table bgcolor="lightyellow">
-        <tr>
-            <th width="45%" bgcolor=#00FF00>CLASIFICACIÓN</th>
-            <th width="45%" bgcolor=#00FF00>PRIMAVERA</th>
-        </tr>
-        <tbody id="tablaSeasonCuatro"></tbody>        
-    </table>
+    <h1>Tabla de Personas</h1>
+
+    <!-- Contenedor para la tabla -->
+    <div id="tabla-container"></div>
+
     <script>
-        // Recupera las variables desde localStorage
-        const datos = JSON.parse(localStorage.getItem('datos'));
-        const nombres = datos.nombres;
-        const personasliga = datos.personasliga;
+        // URL del archivo en GitHub Raw
+        var urlArchivo1 = 'https://josemisuse.github.io/Liga/archivo1.html';
 
-        function compararPorSeasonCuatro(a, b) {
-            return b.season4 - a.season4;
-        }
+        // Obtener el contenido del archivo usando fetch
+        fetch(urlArchivo1)
+            .then(response => response.text())
+            .then(data => {
+                // Crear un contenedor temporal para insertar el código HTML
+                var tempContainer = document.createElement('div');
+                tempContainer.innerHTML = data;
 
-        personasliga.sort(compararPorSeasonCuatro);
+                // Obtener la referencia a la variable global personas definida en archivo1.html
+                var personas = tempContainer.querySelector('script').textContent;
 
-        var tablaPersonitas = document.getElementById("tablaSeasonCuatro");
+                // Evaluar el contenido del script para obtener los datos
+                eval(personas);
 
-        personasliga.forEach(function (personaliga) {
-            var fila = document.createElement("tr");
-            var cellNombrel = document.createElement("td");
-            var cellGlobaliga = document.createElement("td");
+                // Obtener la referencia al contenedor de la tabla
+                var tablaContainer = document.getElementById('tabla-container');
 
-            cellNombrel.textContent = personaliga.nombrel;
-            cellGlobaliga.textContent = personaliga.season4;
+                // Crear la tabla y agregarla al contenedor
+                var tabla = document.createElement('table');
+                tabla.border = '1';
 
-            fila.appendChild(cellNombrel);
-            fila.appendChild(cellGlobaliga);
+                // Crear la fila de encabezado
+                var encabezado = tabla.createTHead();
+                var filaEncabezado = encabezado.insertRow();
+                var celdaNombre = filaEncabezado.insertCell(0);
+                var celdaEdad = filaEncabezado.insertCell(1);
+                celdaNombre.innerHTML = '<b>Nombre</b>';
+                celdaEdad.innerHTML = '<b>Edad</b>';
 
-            tablaPersonitas.appendChild(fila);
-        });
+                // Llenar la tabla con datos de personas
+                for (var i = 0; i < personas.length; i++) {
+                    var fila = tabla.insertRow();
+                    var celda1 = fila.insertCell(0);
+                    var celda2 = fila.insertCell(1);
+                    celda1.innerHTML = personas[i].nombre;
+                    celda2.innerHTML = personas[i].edad;
+                }
+
+                // Agregar la tabla al contenedor
+                tablaContainer.appendChild(tabla);
+            })
+            .catch(error => console.error('Error al cargar el archivo:', error));
     </script>
 </body>
 </html>
