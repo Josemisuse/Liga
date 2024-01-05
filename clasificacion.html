@@ -219,17 +219,18 @@
         return tablaEnfrentamientosEspecificos;
         
     }
-    var pruebados = personas;
+    var pruebacero = personas;
+</script>
 
 
 
-
-//<!-- JORNADAS-->
-    divParrafo.innerHTML = "<p>";
-//<!-- ESTACION 111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111-->
-    var estacion=1;
-//<!--JORNADA 1 ########################################################################################################################-->
-
+<!-- JORNADAS-->
+<p>
+<!-- ESTACION 111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111-->
+<script>estacion=1;</script>
+<!--JORNADA 1 ########################################################################################################################-->
+<script>
+    var pruebauno = personas;
     // Calcular la tabla de enfrentamientos especificos
     var enfrentamientos1 = [
         { JugadorA: "Marcos", JugadorB: "Victor" },
@@ -244,7 +245,8 @@
     // Crear una tabla HTML con los resultados de los enfrentamientos especificos
     var tablaHTML1 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
         tablaEnfrentamientosEspecificos1.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
-
+</script>
+<script>
     // Funcion para mostrar/ocultar la tabla
     function toggleTabla1() {
         var tablaContainer1 = document.getElementById("tablaContainer1");
@@ -261,7 +263,7 @@
 
     // Asociar la funcion al evento click del boton
     document.getElementById("mostrarOcultar1").addEventListener("click", toggleTabla1);
-    var pruebatres = personas;
+    var pruebados = personas;
 </script>
 
     
@@ -1536,7 +1538,7 @@
 
     // Asociar la funcion al evento click del boton
     document.getElementById("mostrarOcultar36").addEventListener("click", toggleTabla36);
-    var pruebacuatro = personas;
+    var pruebatres = personas;
 </script>
 
 
@@ -1608,7 +1610,7 @@
 
         tablaPersonitas.appendChild(fila);
     });
-    
+    var pruebacuatro = personas;
 </script>
 
 
