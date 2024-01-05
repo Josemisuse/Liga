@@ -245,8 +245,7 @@
     // Crear una tabla HTML con los resultados de los enfrentamientos especificos
     var tablaHTML1 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
         tablaEnfrentamientosEspecificos1.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
-</script>
-<script>
+
     // Funcion para mostrar/ocultar la tabla
     function toggleTabla1() {
         var tablaContainer1 = document.getElementById("tablaContainer1");
@@ -263,11 +262,11 @@
 
     // Asociar la funcion al evento click del boton
     document.getElementById("mostrarOcultar1").addEventListener("click", toggleTabla1);
-</script>
+
 
     
-<!--JORNADA 2 ########################################################################################################################-->
-<script>
+//<!--JORNADA 2 ########################################################################################################################-->
+
     // Calcular la tabla de enfrentamientos especificos
     var enfrentamientos2 = [
         { JugadorA: "Juan", JugadorB: "Marcos" },
@@ -281,8 +280,7 @@
     // Crear una tabla HTML con los resultados de los enfrentamientos especificos        
     var tablaHTML2 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
         tablaEnfrentamientosEspecificos2.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
-</script>
-<script>
+
     // Funcion para mostrar/ocultar la tabla
     function toggleTabla2() {
         var tablaContainer2 = document.getElementById("tablaContainer2");
@@ -299,11 +297,11 @@
 
     // Asociar la funcion al evento click del boton
     document.getElementById("mostrarOcultar2").addEventListener("click", toggleTabla2);
-</script>
 
 
-<!--JORNADA 3 ########################################################################################################################-->
-<script>
+
+//<!--JORNADA 3 ########################################################################################################################-->
+
     // Calcular la tabla de enfrentamientos especificos
     var enfrentamientos3 = [
         { JugadorA: "Juan", JugadorB: "Ismael" },
@@ -319,8 +317,7 @@
         tablaEnfrentamientosEspecificos3.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
     
     // ligaResultados.innerHTML = tablaHTML;
-</script>
-<script>
+
     // Funcion para mostrar/ocultar la tabla
     function toggleTabla3() {
         var tablaContainer3 = document.getElementById("tablaContainer3");
@@ -337,11 +334,11 @@
 
     // Asociar la funcion al evento click del boton
     document.getElementById("mostrarOcultar3").addEventListener("click", toggleTabla3);
-</script>
+
     
 
-<!--JORNADA 4 ########################################################################################################################-->
-<script>
+//<!--JORNADA 4 ########################################################################################################################-->
+
     // Calcular la tabla de enfrentamientos especificos
     var enfrentamientos4 = [
         { JugadorA: "Juan", JugadorB: "Alex" },
@@ -355,8 +352,7 @@
     // Crear una tabla HTML con los resultados de los enfrentamientos especificos        
     var tablaHTML4 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
         tablaEnfrentamientosEspecificos4.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
-</script>   
-<script>
+
     // Funcion para mostrar/ocultar la tabla
     function toggleTabla4() {
         var tablaContainer4 = document.getElementById("tablaContainer4");
@@ -373,11 +369,11 @@
 
     // Asociar la funcion al evento click del boton
     document.getElementById("mostrarOcultar4").addEventListener("click", toggleTabla4);
-</script>
 
 
-<!--JORNADA 5 ########################################################################################################################-->
-<script>
+
+//<!--JORNADA 5 ########################################################################################################################-->
+
     // Calcular la tabla de enfrentamientos especificos
     var enfrentamientos5 = [
         { JugadorA: "Juan", JugadorB: "Jorge" },
@@ -391,8 +387,7 @@
     // Crear una tabla HTML con los resultados de los enfrentamientos especificos        
     var tablaHTML5 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
         tablaEnfrentamientosEspecificos5.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
-</script>    
-<script>
+
     // Funcion para mostrar/ocultar la tabla
     function toggleTabla5() {
         var tablaContainer5 = document.getElementById("tablaContainer5");
@@ -409,11 +404,11 @@
 
     // Asociar la funcion al evento click del boton
     document.getElementById("mostrarOcultar5").addEventListener("click", toggleTabla5);
-</script>
 
 
-<!--JORNADA 6 ########################################################################################################################-->
-<script>    
+
+//<!--JORNADA 6 ########################################################################################################################-->
+  
     // Calcular la tabla de enfrentamientos especificos
     var enfrentamientos6 = [
         { JugadorA: "Juan", JugadorB: "Sergio" },
@@ -427,8 +422,7 @@
     // Crear una tabla HTML con los resultados de los enfrentamientos especificos        
     var tablaHTML6 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
         tablaEnfrentamientosEspecificos6.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
-</script>
-<script>
+
     // Funcion para mostrar/ocultar la tabla
     function toggleTabla6() {
         var tablaContainer6 = document.getElementById("tablaContainer6");
@@ -445,11 +439,11 @@
 
     // Asociar la funcion al evento click del boton
     document.getElementById("mostrarOcultar6").addEventListener("click", toggleTabla6);
-</script>
 
 
-<!--JORNADA 7 ########################################################################################################################-->
-<script>    
+
+//<!--JORNADA 7 ########################################################################################################################-->
+   
     // Calcular la tabla de enfrentamientos especificos
     var enfrentamientos7 = [
         { JugadorA: "Juan", JugadorB: "Carmelo" },
@@ -463,8 +457,8 @@
     // Crear una tabla HTML con los resultados de los enfrentamientos especificos        
     var tablaHTML7 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
         tablaEnfrentamientosEspecificos7.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
-</script>
-<script>
+
+//
     // Funcion para mostrar/ocultar la tabla
     function toggleTabla7() {
         var tablaContainer7 = document.getElementById("tablaContainer7");
@@ -481,11 +475,11 @@
 
     // Asociar la funcion al evento click del boton
     document.getElementById("mostrarOcultar7").addEventListener("click", toggleTabla7);
-</script>        
+        
 
 
-<!--JORNADA 8 ########################################################################################################################-->
-<script>   
+//<!--JORNADA 8 ########################################################################################################################-->
+//   
     // Calcular la tabla de enfrentamientos especificos
     var enfrentamientos8 = [
         { JugadorA: "Juan", JugadorB: "Oscar" },
@@ -499,8 +493,8 @@
     // Crear una tabla HTML con los resultados de los enfrentamientos especificos        
     var tablaHTML8 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
         tablaEnfrentamientosEspecificos8.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
-</script>
-<script>
+
+//
     // Funcion para mostrar/ocultar la tabla
     function toggleTabla8() {
         var tablaContainer8 = document.getElementById("tablaContainer8");
@@ -517,11 +511,11 @@
 
     // Asociar la funcion al evento click del boton
     document.getElementById("mostrarOcultar8").addEventListener("click", toggleTabla8);
-</script>
 
 
-<!--JORNADA 9 ########################################################################################################################-->
-<script>
+
+//<!--JORNADA 9 ########################################################################################################################-->
+//
     // Calcular la tabla de enfrentamientos especificos
     var enfrentamientos9 = [
         { JugadorA: "Juan", JugadorB: "Victor" },
@@ -535,8 +529,8 @@
     // Crear una tabla HTML con los resultados de los enfrentamientos especificos        
     var tablaHTML9 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
         tablaEnfrentamientosEspecificos9.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
-</script>
-<script>
+
+//
     // Funcion para mostrar/ocultar la tabla
     function toggleTabla9() {
         var tablaContainer9 = document.getElementById("tablaContainer9");
@@ -553,12 +547,12 @@
 
     // Asociar la funcion al evento click del boton
     document.getElementById("mostrarOcultar9").addEventListener("click", toggleTabla9);
-</script>
 
-<!-- ESTACION 2222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222-->
-<script>estacion=2;</script>
-<!--JORNADA 10 ########################################################################################################################-->
-<script>
+
+//<!-- ESTACION 2222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222-->
+//estacion=2;
+//<!--JORNADA 10 ########################################################################################################################-->
+//
     // Calcular la tabla de enfrentamientos especificos
     var enfrentamientos10 = [
         { JugadorA: "Marcos", JugadorB: "Victor" },
@@ -572,8 +566,8 @@
     // Crear una tabla HTML con los resultados de los enfrentamientos especificos
     var tablaHTML10 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
         tablaEnfrentamientosEspecificos10.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
-</script>
-<script>
+
+//
     // Funcion para mostrar/ocultar la tabla
     function toggleTabla10() {
         var tablaContainer10 = document.getElementById("tablaContainer10");
@@ -590,11 +584,11 @@
 
     // Asociar la funcion al evento click del boton
     document.getElementById("mostrarOcultar10").addEventListener("click", toggleTabla10);
-</script>
+
 
     
-<!--JORNADA 11 ########################################################################################################################-->
-<script>
+//<!--JORNADA 11 ########################################################################################################################-->
+//
     // Calcular la tabla de enfrentamientos especificos
     var enfrentamientos11 = [
         { JugadorA: "Juan", JugadorB: "Marcos" },
@@ -608,8 +602,8 @@
     // Crear una tabla HTML con los resultados de los enfrentamientos especificos        
     var tablaHTML11 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
         tablaEnfrentamientosEspecificos11.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
-</script>
-<script>
+
+//
     // Funcion para mostrar/ocultar la tabla
     function toggleTabla11() {
         var tablaContainer11 = document.getElementById("tablaContainer11");
@@ -626,11 +620,11 @@
 
     // Asociar la funcion al evento click del boton
     document.getElementById("mostrarOcultar11").addEventListener("click", toggleTabla11);
-</script>
 
 
-<!--JORNADA 12 ########################################################################################################################-->
-<script>
+
+//<!--JORNADA 12 ########################################################################################################################-->
+//
     // Calcular la tabla de enfrentamientos especificos
     var enfrentamientos12 = [
         { JugadorA: "Juan", JugadorB: "Ismael" },
@@ -646,8 +640,8 @@
         tablaEnfrentamientosEspecificos12.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
     
     // ligaResultados.innerHTML = tablaHTML;
-</script>
-<script>
+
+//
     // Funcion para mostrar/ocultar la tabla
     function toggleTabla12() {
         var tablaContainer12 = document.getElementById("tablaContainer12");
@@ -664,11 +658,11 @@
 
     // Asociar la funcion al evento click del boton
     document.getElementById("mostrarOcultar12").addEventListener("click", toggleTabla12);
-</script>
+
     
 
-<!--JORNADA 13 ########################################################################################################################-->
-<script>
+//<!--JORNADA 13 ########################################################################################################################-->
+//
     // Calcular la tabla de enfrentamientos especificos
     var enfrentamientos13 = [
         { JugadorA: "Juan", JugadorB: "Alex" },
@@ -682,8 +676,8 @@
     // Crear una tabla HTML con los resultados de los enfrentamientos especificos        
     var tablaHTML13 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
         tablaEnfrentamientosEspecificos13.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
-</script>   
-<script>
+   
+//
     // Funcion para mostrar/ocultar la tabla
     function toggleTabla13() {
         var tablaContainer13 = document.getElementById("tablaContainer13");
@@ -700,11 +694,11 @@
 
     // Asociar la funcion al evento click del boton
     document.getElementById("mostrarOcultar13").addEventListener("click", toggleTabla13);
-</script>
 
 
-<!--JORNADA 14 ########################################################################################################################-->
-<script>
+
+//<!--JORNADA 14 ########################################################################################################################-->
+//
     // Calcular la tabla de enfrentamientos especificos
     var enfrentamientos14 = [
         { JugadorA: "Juan", JugadorB: "Jorge" },
@@ -718,8 +712,8 @@
     // Crear una tabla HTML con los resultados de los enfrentamientos especificos - Propiedad intelectual de Jose Miguel Sualdea Serrano -        
     var tablaHTML14 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
         tablaEnfrentamientosEspecificos14.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
-</script>    
-<script>
+    
+//
     // Funcion para mostrar/ocultar la tabla
     function toggleTabla14() {
         var tablaContainer14 = document.getElementById("tablaContainer14");
@@ -736,11 +730,11 @@
 
     // Asociar la funcion al evento click del boton
     document.getElementById("mostrarOcultar14").addEventListener("click", toggleTabla14);
-</script>
 
 
-<!--JORNADA 15 ########################################################################################################################-->
-<script>    
+
+//<!--JORNADA 15 ########################################################################################################################-->
+//    
     // Calcular la tabla de enfrentamientos especificos
     var enfrentamientos15 = [
         { JugadorA: "Juan", JugadorB: "Sergio" },
@@ -754,8 +748,8 @@
     // Crear una tabla HTML con los resultados de los enfrentamientos especificos        
     var tablaHTML15 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
         tablaEnfrentamientosEspecificos15.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
-</script>
-<script>
+
+//
     // Funcion para mostrar/ocultar la tabla
     function toggleTabla15() {
         var tablaContainer15 = document.getElementById("tablaContainer15");
@@ -772,11 +766,11 @@
 
     // Asociar la funcion al evento click del boton
     document.getElementById("mostrarOcultar15").addEventListener("click", toggleTabla15);
-</script>
 
 
-<!--JORNADA 16 ########################################################################################################################-->
-<script>    
+
+//<!--JORNADA 16 ########################################################################################################################-->
+//    
     // Calcular la tabla de enfrentamientos especificos
     var enfrentamientos16 = [
         { JugadorA: "Juan", JugadorB: "Carmelo" },
@@ -790,8 +784,8 @@
     // Crear una tabla HTML con los resultados de los enfrentamientos especificos        
     var tablaHTML16 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
         tablaEnfrentamientosEspecificos16.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
-</script>
-<script>
+
+//
     // Funcion para mostrar/ocultar la tabla
     function toggleTabla16() {
         var tablaContainer16 = document.getElementById("tablaContainer16");
@@ -808,11 +802,11 @@
 
     // Asociar la funcion al evento click del boton
     document.getElementById("mostrarOcultar16").addEventListener("click", toggleTabla16);
-</script>        
+        
 
 
-<!--JORNADA 17 ########################################################################################################################-->
-<script>   
+//<!--JORNADA 17 ########################################################################################################################-->
+//   
     // Calcular la tabla de enfrentamientos especificos
     var enfrentamientos17 = [
         { JugadorA: "Juan", JugadorB: "Oscar" },
@@ -826,8 +820,8 @@
     // Crear una tabla HTML con los resultados de los enfrentamientos especificos        
     var tablaHTML17 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
         tablaEnfrentamientosEspecificos17.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
-</script>
-<script>
+
+//
     // Funcion para mostrar/ocultar la tabla
     function toggleTabla17() {
         var tablaContainer17 = document.getElementById("tablaContainer17");
@@ -844,11 +838,11 @@
 
     // Asociar la funcion al evento click del boton
     document.getElementById("mostrarOcultar17").addEventListener("click", toggleTabla17);
-</script>
 
 
-<!--JORNADA 18 ########################################################################################################################-->
-<script>
+
+//<!--JORNADA 18 ########################################################################################################################-->
+//
     // Calcular la tabla de enfrentamientos especificos
     var enfrentamientos18 = [
         { JugadorA: "Juan", JugadorB: "Victor" },
@@ -862,8 +856,8 @@
     // Crear una tabla HTML con los resultados de los enfrentamientos especificos        
     var tablaHTML18 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
         tablaEnfrentamientosEspecificos18.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
-</script>
-<script>
+
+//
     // Funcion para mostrar/ocultar la tabla
     function toggleTabla18() {
         var tablaContainer18 = document.getElementById("tablaContainer18");
@@ -880,13 +874,13 @@
 
     // Asociar la funcion al evento click del boton
     document.getElementById("mostrarOcultar18").addEventListener("click", toggleTabla18);
-</script>
 
 
-<!-- ESTACION 3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333-->
-<script>estacion=3;</script>
-<!--JORNADA 19 ########################################################################################################################-->
-<script>
+
+//<!-- ESTACION 3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333-->
+//estacion=3;
+//<!--JORNADA 19 ########################################################################################################################-->
+//
     // Calcular la tabla de enfrentamientos especificos
     var enfrentamientos19 = [
         { JugadorA: "Marcos", JugadorB: "Victor" },
@@ -900,8 +894,8 @@
     // Crear una tabla HTML con los resultados de los enfrentamientos especificos
     var tablaHTML19 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
         tablaEnfrentamientosEspecificos19.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
-</script>
-<script>
+
+//
     // Funcion para mostrar/ocultar la tabla
     function toggleTabla19() {
         var tablaContainer19 = document.getElementById("tablaContainer19");
@@ -918,11 +912,11 @@
 
     // Asociar la funcion al evento click del boton
     document.getElementById("mostrarOcultar19").addEventListener("click", toggleTabla19);
-</script>
+
 
     
-<!--JORNADA 20 ########################################################################################################################-->
-<script>
+//<!--JORNADA 20 ########################################################################################################################-->
+//
     // Calcular la tabla de enfrentamientos especificos
     var enfrentamientos20 = [
         { JugadorA: "Juan", JugadorB: "Marcos" },
@@ -936,8 +930,8 @@
     // Crear una tabla HTML con los resultados de los enfrentamientos especificos        
     var tablaHTML20 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
         tablaEnfrentamientosEspecificos20.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
-</script>
-<script>
+
+//
     // Funcion para mostrar/ocultar la tabla
     function toggleTabla20() {
         var tablaContainer20 = document.getElementById("tablaContainer20");
@@ -954,11 +948,11 @@
 
     // Asociar la funcion al evento click del boton
     document.getElementById("mostrarOcultar20").addEventListener("click", toggleTabla20);
-</script>
 
 
-<!--JORNADA 21 ########################################################################################################################-->
-<script>
+
+//<!--JORNADA 21 ########################################################################################################################-->
+//
     // Calcular la tabla de enfrentamientos especificos
     var enfrentamientos21 = [
         { JugadorA: "Juan", JugadorB: "Ismael" },
@@ -974,8 +968,8 @@
         tablaEnfrentamientosEspecificos21.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
     
     // ligaResultados.innerHTML = tablaHTML;
-</script>
-<script>
+
+//
     // Funcion para mostrar/ocultar la tabla
     function toggleTabla21() {
         var tablaContainer21 = document.getElementById("tablaContainer21");
@@ -992,11 +986,11 @@
 
     // Asociar la funcion al evento click del boton
     document.getElementById("mostrarOcultar21").addEventListener("click", toggleTabla21);
-</script>
+
     
 
-<!--JORNADA 22 ########################################################################################################################-->
-<script>
+//<!--JORNADA 22 ########################################################################################################################-->
+//
     // Calcular la tabla de enfrentamientos especificos
     var enfrentamientos22 = [
         { JugadorA: "Juan", JugadorB: "Alex" },
@@ -1010,8 +1004,8 @@
     // Crear una tabla HTML con los resultados de los enfrentamientos especificos        
     var tablaHTML22 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
         tablaEnfrentamientosEspecificos22.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
-</script>   
-<script>
+   
+//
     // Funcion para mostrar/ocultar la tabla
     function toggleTabla22() {
         var tablaContainer22 = document.getElementById("tablaContainer22");
@@ -1028,11 +1022,11 @@
 
     // Asociar la funcion al evento click del boton
     document.getElementById("mostrarOcultar22").addEventListener("click", toggleTabla22);
-</script>
 
 
-<!--JORNADA 23 ########################################################################################################################-->
-<script>
+
+//<!--JORNADA 23 ########################################################################################################################-->
+//
     // Calcular la tabla de enfrentamientos especificos
     var enfrentamientos23 = [
         { JugadorA: "Juan", JugadorB: "Jorge" },
@@ -1046,8 +1040,8 @@
     // Crear una tabla HTML con los resultados de los enfrentamientos especificos - Propiedad intelectual de Jose Miguel Sualdea Serrano -        
     var tablaHTML23 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
         tablaEnfrentamientosEspecificos23.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
-</script>    
-<script>
+    
+//
     // Funcion para mostrar/ocultar la tabla
     function toggleTabla23() {
         var tablaContainer23 = document.getElementById("tablaContainer14");
@@ -1064,11 +1058,11 @@
 
     // Asociar la funcion al evento click del boton
     document.getElementById("mostrarOcultar23").addEventListener("click", toggleTabla23);
-</script>
 
 
-<!--JORNADA 24 ########################################################################################################################-->
-<script>    
+
+//<!--JORNADA 24 ########################################################################################################################-->
+//    
     // Calcular la tabla de enfrentamientos especificos
     var enfrentamientos24 = [
         { JugadorA: "Juan", JugadorB: "Sergio" },
@@ -1082,8 +1076,8 @@
     // Crear una tabla HTML con los resultados de los enfrentamientos especificos        
     var tablaHTML24 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
         tablaEnfrentamientosEspecificos24.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
-</script>
-<script>
+
+//
     // Funcion para mostrar/ocultar la tabla
     function toggleTabla24() {
         var tablaContainer24 = document.getElementById("tablaContainer24");
@@ -1100,11 +1094,11 @@
 
     // Asociar la funcion al evento click del boton
     document.getElementById("mostrarOcultar24").addEventListener("click", toggleTabla24);
-</script>
 
 
-<!--JORNADA 25 ########################################################################################################################-->
-<script>    
+
+//<!--JORNADA 25 ########################################################################################################################-->
+//    
     // Calcular la tabla de enfrentamientos especificos
     var enfrentamientos25 = [
         { JugadorA: "Juan", JugadorB: "Carmelo" },
@@ -1118,8 +1112,8 @@
     // Crear una tabla HTML con los resultados de los enfrentamientos especificos        
     var tablaHTML25 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
         tablaEnfrentamientosEspecificos25.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
-</script>
-<script>
+
+//
     // Funcion para mostrar/ocultar la tabla
     function toggleTabla25() {
         var tablaContainer25 = document.getElementById("tablaContainer25");
@@ -1136,11 +1130,11 @@
 
     // Asociar la funcion al evento click del boton
     document.getElementById("mostrarOcultar25").addEventListener("click", toggleTabla25);
-</script>        
+        
 
 
-<!--JORNADA 26 ########################################################################################################################-->
-<script>   
+//<!--JORNADA 26 ########################################################################################################################-->
+//   
     // Calcular la tabla de enfrentamientos especificos
     var enfrentamientos26 = [
         { JugadorA: "Juan", JugadorB: "Oscar" },
@@ -1154,8 +1148,8 @@
     // Crear una tabla HTML con los resultados de los enfrentamientos especificos        
     var tablaHTML26 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
         tablaEnfrentamientosEspecificos26.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
-</script>
-<script>
+
+//
     // Funcion para mostrar/ocultar la tabla
     function toggleTabla26() {
         var tablaContainer26 = document.getElementById("tablaContainer26");
@@ -1172,11 +1166,11 @@
 
     // Asociar la funcion al evento click del boton
     document.getElementById("mostrarOcultar26").addEventListener("click", toggleTabla26);
-</script>
 
 
-<!--JORNADA 27 ########################################################################################################################-->
-<script>
+
+//<!--JORNADA 27 ########################################################################################################################-->
+//
     // Calcular la tabla de enfrentamientos especificos
     var enfrentamientos27 = [
         { JugadorA: "Juan", JugadorB: "Victor" },
@@ -1190,8 +1184,8 @@
     // Crear una tabla HTML con los resultados de los enfrentamientos especificos        
     var tablaHTML27 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
         tablaEnfrentamientosEspecificos27.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
-</script>
-<script>
+
+//
     // Funcion para mostrar/ocultar la tabla
     function toggleTabla27() {
         var tablaContainer27 = document.getElementById("tablaContainer27");
@@ -1208,14 +1202,14 @@
 
     // Asociar la funcion al evento click del boton
     document.getElementById("mostrarOcultar27").addEventListener("click", toggleTabla27);
-</script>
 
 
 
-<!-- ESTACION 4444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444-->
-<script>estacion=4;</script>
-<!--JORNADA 28 ########################################################################################################################-->
-<script>
+
+//<!-- ESTACION 4444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444-->
+//estacion=4;
+//<!--JORNADA 28 ########################################################################################################################-->
+//
     // Calcular la tabla de enfrentamientos especificos
     var enfrentamientos28 = [
         { JugadorA: "Marcos", JugadorB: "Victor" },
@@ -1229,8 +1223,8 @@
     // Crear una tabla HTML con los resultados de los enfrentamientos especificos
     var tablaHTML28 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
         tablaEnfrentamientosEspecificos28.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
-</script>
-<script>
+
+//
     // Funcion para mostrar/ocultar la tabla
     function toggleTabla28() {
         var tablaContainer28 = document.getElementById("tablaContainer28");
@@ -1247,11 +1241,11 @@
 
     // Asociar la funcion al evento click del boton
     document.getElementById("mostrarOcultar28").addEventListener("click", toggleTabla28);
-</script>
+
 
     
-<!--JORNADA 29 ########################################################################################################################-->
-<script>
+//<!--JORNADA 29 ########################################################################################################################-->
+//
     // Calcular la tabla de enfrentamientos especificos
     var enfrentamientos29 = [
         { JugadorA: "Juan", JugadorB: "Marcos" },
@@ -1265,8 +1259,8 @@
     // Crear una tabla HTML con los resultados de los enfrentamientos especificos        
     var tablaHTML29 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
         tablaEnfrentamientosEspecificos29.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
-</script>
-<script>
+
+//
     // Funcion para mostrar/ocultar la tabla
     function toggleTabla29() {
         var tablaContainer29 = document.getElementById("tablaContainer29");
@@ -1283,11 +1277,11 @@
 
     // Asociar la funcion al evento click del boton
     document.getElementById("mostrarOcultar29").addEventListener("click", toggleTabla29);
-</script>
 
 
-<!--JORNADA 30 ########################################################################################################################-->
-<script>
+
+//<!--JORNADA 30 ########################################################################################################################-->
+//
     // Calcular la tabla de enfrentamientos especificos
     var enfrentamientos30 = [
         { JugadorA: "Juan", JugadorB: "Ismael" },
@@ -1303,8 +1297,8 @@
         tablaEnfrentamientosEspecificos30.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
     
     // ligaResultados.innerHTML = tablaHTML;
-</script>
-<script>
+
+//
     // Funcion para mostrar/ocultar la tabla
     function toggleTabla30() {
         var tablaContainer30 = document.getElementById("tablaContainer30");
@@ -1321,11 +1315,11 @@
 
     // Asociar la funcion al evento click del boton
     document.getElementById("mostrarOcultar30").addEventListener("click", toggleTabla30);
-</script>
+
     
 
-<!--JORNADA 31 ########################################################################################################################-->
-<script>
+//<!--JORNADA 31 ########################################################################################################################-->
+//
     // Calcular la tabla de enfrentamientos especificos
     var enfrentamientos31 = [
         { JugadorA: "Juan", JugadorB: "Alex" },
@@ -1339,8 +1333,8 @@
     // Crear una tabla HTML con los resultados de los enfrentamientos especificos        
     var tablaHTML31 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
         tablaEnfrentamientosEspecificos31.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
-</script>   
-<script>
+   
+//
     // Funcion para mostrar/ocultar la tabla
     function toggleTabla31() {
         var tablaContainer31 = document.getElementById("tablaContainer31");
@@ -1357,11 +1351,11 @@
 
     // Asociar la funcion al evento click del boton
     document.getElementById("mostrarOcultar31").addEventListener("click", toggleTabla31);
-</script>
 
 
-<!--JORNADA 32 ########################################################################################################################-->
-<script>
+
+//<!--JORNADA 32 ########################################################################################################################-->
+//
     // Calcular la tabla de enfrentamientos especificos
     var enfrentamientos32 = [
         { JugadorA: "Juan", JugadorB: "Jorge" },
@@ -1375,8 +1369,8 @@
     // Crear una tabla HTML con los resultados de los enfrentamientos especificos - Propiedad intelectual de Jose Miguel Sualdea Serrano -        
     var tablaHTML32 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
         tablaEnfrentamientosEspecificos32.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
-</script>    
-<script>
+    
+//
     // Funcion para mostrar/ocultar la tabla
     function toggleTabla32() {
         var tablaContainer32 = document.getElementById("tablaContainer32");
@@ -1393,11 +1387,11 @@
 
     // Asociar la funcion al evento click del boton
     document.getElementById("mostrarOcultar32").addEventListener("click", toggleTabla32);
-</script>
 
 
-<!--JORNADA 33 ########################################################################################################################-->
-<script>    
+
+//<!--JORNADA 33 ########################################################################################################################-->
+//    
     // Calcular la tabla de enfrentamientos especificos
     var enfrentamientos33 = [
         { JugadorA: "Juan", JugadorB: "Sergio" },
@@ -1411,8 +1405,8 @@
     // Crear una tabla HTML con los resultados de los enfrentamientos especificos        
     var tablaHTML33 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
         tablaEnfrentamientosEspecificos33.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
-</script>
-<script>
+
+//
     // Funcion para mostrar/ocultar la tabla
     function toggleTabla33() {
         var tablaContainer33 = document.getElementById("tablaContainer33");
@@ -1429,11 +1423,11 @@
 
     // Asociar la funcion al evento click del boton
     document.getElementById("mostrarOcultar33").addEventListener("click", toggleTabla33);
-</script>
 
 
-<!--JORNADA 34 ########################################################################################################################-->
-<script>    
+
+//<!--JORNADA 34 ########################################################################################################################-->
+//    
     // Calcular la tabla de enfrentamientos especificos
     var enfrentamientos34 = [
         { JugadorA: "Juan", JugadorB: "Carmelo" },
@@ -1447,8 +1441,8 @@
     // Crear una tabla HTML con los resultados de los enfrentamientos especificos        
     var tablaHTML34 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
         tablaEnfrentamientosEspecificos34.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
-</script>
-<script>
+
+//
     // Funcion para mostrar/ocultar la tabla
     function toggleTabla34() {
         var tablaContainer34 = document.getElementById("tablaContainer34");
@@ -1465,11 +1459,11 @@
 
     // Asociar la funcion al evento click del boton
     document.getElementById("mostrarOcultar34").addEventListener("click", toggleTabla34);
-</script>        
+        
 
 
-<!--JORNADA 35 ########################################################################################################################-->
-<script>   
+//<!--JORNADA 35 ########################################################################################################################-->
+//   
     // Calcular la tabla de enfrentamientos especificos
     var enfrentamientos35 = [
         { JugadorA: "Juan", JugadorB: "Oscar" },
@@ -1483,8 +1477,8 @@
     // Crear una tabla HTML con los resultados de los enfrentamientos especificos        
     var tablaHTML35 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
         tablaEnfrentamientosEspecificos35.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
-</script>
-<script>
+
+//
     // Funcion para mostrar/ocultar la tabla
     function toggleTabla35() {
         var tablaContainer35 = document.getElementById("tablaContainer35");
@@ -1501,11 +1495,11 @@
 
     // Asociar la funcion al evento click del boton
     document.getElementById("mostrarOcultar35").addEventListener("click", toggleTabla35);
-</script>
 
 
-<!--JORNADA 36 ########################################################################################################################-->
-<script>
+
+//<!--JORNADA 36 ########################################################################################################################-->
+//
     // Calcular la tabla de enfrentamientos especificos
     var enfrentamientos36 = [
         { JugadorA: "Juan", JugadorB: "Victor" },
@@ -1519,8 +1513,8 @@
     // Crear una tabla HTML con los resultados de los enfrentamientos especificos        
     var tablaHTML36 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
         tablaEnfrentamientosEspecificos36.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
-</script>
-<script>
+
+
     // Funcion para mostrar/ocultar la tabla
     function toggleTabla36() {
         var tablaContainer36 = document.getElementById("tablaContainer36");
