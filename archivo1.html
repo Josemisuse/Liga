@@ -577,6 +577,45 @@
             </script>
         </p>
 
+        <!-- JORNADAS-->
+        <p>
+            <!-- ESTACION 111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111-->
+            <script>estacion=1;</script>
+            <!--JORNADA 1 ########################################################################################################################-->
+            <script>
+                // Calcular la tabla de enfrentamientos especificos
+                const enfrentamientos1 = [
+                    { JugadorA: "Marcos", JugadorB: "Victor" },
+                    { JugadorA: "Alex", JugadorB: "Carmelo" },
+                    { JugadorA: "Sergio", JugadorB: "Jorge" },
+                    { JugadorA: "Ismael", JugadorB: "Oscar" },
+                    { JugadorA: "Jose", JugadorB: "Juan" }
+                ];
+                const tablaEnfrentamientosEspecificos1 = calcularTablaEnfrentamientosEspecificos(nombres, jornada1, enfrentamientos1, personasliga, estacion);
+                
+                //personasliga = calcularTablaEnfrentamientosEspecificos(nombres, jornada1, enfrentamientos1, personasliga, estacion);
+                // Crear una tabla HTML con los resultados de los enfrentamientos especificos
+                const tablaHTML1 = "<table bgcolor=lightyellow><tr><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>MISTER LOCAL</th><th width=10% bgcolor=lightgreen>MISTER VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th><th width=5% bgcolor=lightgreen></th><th width=10% bgcolor=lightgreen>LOCAL</th><th width=10% bgcolor=lightgreen>LIGA LOCAL</th><th width=10% bgcolor=lightgreen>LIGA VISITANTE</th><th width=10% bgcolor=lightgreen>VISITANTE</th></tr>" +
+                    tablaEnfrentamientosEspecificos1.map(item => `<tr><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosA}</td><td style="text-align:center;">${item.PuntosB}</td><td style="text-align:center;">${item.JugadorB}</td><td style="text-align:center;" bgcolor=lightgreen></td><td style="text-align:center;">${item.JugadorA}</td><td style="text-align:center;">${item.PuntosJugadorA}</td><td style="text-align:center;">${item.PuntosJugadorB}</td><td style="text-align:center;">${item.JugadorB}</td></tr>`).join("") + "</table>";
+            </script>
+            <script>
+                // Funcion para mostrar/ocultar la tabla
+                function toggleTabla1() {
+                    var tablaContainer1 = document.getElementById("tablaContainer1");
+                    if (tablaContainer1.style.display === "none") {
+                        // Muestra la tabla
+                        tablaContainer1.innerHTML = tablaHTML1; // Asigna el contenido HTML generado en JavaScript
+                        tablaContainer1.style.display = "block";
+                    } else {
+                        // Oculta la tabla
+                        tablaContainer1.innerHTML = ""; // Borra el contenido HTML
+                        tablaContainer1.style.display = "none";
+                    }
+                }
+
+                // Asociar la funcion al evento click del boton
+                document.getElementById("mostrarOcultar1").addEventListener("click", toggleTabla1);
+            </script>
 
     <!-- Contenido de archivo1.html, no es necesario mostrar las tablas aquí -->
 </body>
