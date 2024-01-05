@@ -31,6 +31,78 @@
                     { nombrel: nombres[9], globaliga: 0,  season1: 0, season2: 0, season3: 0, season4: 0}
         ];
     </script>
+    <script>
+            // Funcion para calcular la tabla de enfrentamientos especificos
+            function calcularTablaEnfrentamientosEspecificos(nombres, jornada, enfrentamientos, personasliga, estacion) {
+                const tablaEnfrentamientosEspecificos = [];
+
+                enfrentamientos.forEach(enfrentamiento => {
+                    const jugadorA = enfrentamiento.JugadorA;
+                    const jugadorB = enfrentamiento.JugadorB;
+                    const puntosA = jornada[nombres.indexOf(jugadorA)];
+                    const puntosB = jornada[nombres.indexOf(jugadorB)];
+                    let puntosJugadorA = 0;
+                    let puntosJugadorB = 0;
+                    if (puntosA == 0 && puntosB ==0){
+                        puntosJugadorA = ""
+                        puntosJugadorB = ""
+                    }else if (puntosA > puntosB) {
+                        puntosJugadorA = 3;
+                    } else if (puntosA < puntosB) {
+                        puntosJugadorB = 3;
+                    } else {
+                        puntosJugadorA = 1;
+                        puntosJugadorB = 1;
+                    }
+                    y=0;
+                    while (y<10){
+                    if (jugadorA == personasliga[y].nombrel){
+                        personasliga[y].globaliga+=puntosJugadorA;
+                        if(estacion == 1){
+                            personasliga[y].season1+=puntosJugadorA;
+                        }
+                        else if(estacion == 2){
+                            personasliga[y].season2+=puntosJugadorA;
+                        }
+                        else if(estacion == 3){
+                            personasliga[y].season3+=puntosJugadorA;
+                        }
+                        else if(estacion == 4){
+                            personasliga[y].season4+=puntosJugadorA;
+                        }
+                    }
+                    else if (jugadorB == personasliga[y].nombrel){
+                        personasliga[y].globaliga+=puntosJugadorB;
+                        if(estacion == 1){
+                            personasliga[y].season1+=puntosJugadorB;
+                        }
+                        else if(estacion == 2){
+                            personasliga[y].season2+=puntosJugadorB;
+                        }
+                        else if(estacion == 3){
+                            personasliga[y].season3+=puntosJugadorB;
+                        }
+                        else if(estacion == 4){
+                            personasliga[y].season4+=puntosJugadorB;
+                        }
+                    }
+                    y+=1;
+                }
+
+                    tablaEnfrentamientosEspecificos.push({
+                        JugadorA: jugadorA,
+                        JugadorB: jugadorB,
+                        PuntosA: puntosA,
+                        PuntosB: puntosB,
+                        PuntosJugadorA: puntosJugadorA,
+                        PuntosJugadorB: puntosJugadorB,
+                    });
+                });
+                
+                return tablaEnfrentamientosEspecificos;
+                
+            }
+        </script>
 </head>
 <body>
     <!-- Contenido de archivo1.html, no es necesario mostrar las tablas aquí -->
