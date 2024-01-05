@@ -94,7 +94,120 @@
                     { nombrel: nombres[8], globaliga: 0,  season1: 0, season2: 0, season3: 0, season4: 0},
                     { nombrel: nombres[9], globaliga: 0,  season1: 0, season2: 0, season3: 0, season4: 0}
         ];
-    </script>
+            const jornada1 = [45, 27, 50, 24, 30, 21, 28, 30, 13, 35]; // Resultados de la primera jornada
+            const jornada2 = [55, 45, 38, 53, 63, 54, 44, 61, 17, 53];
+            const jornada3 = [22, 46, 41, 36, 56, 53, 60, 65, 36, 55];
+            const jornada4 = [53, 35, 57, 35, 35, 32, 41, 55, 59, 37];
+            const jornada5 = [53, 40, 62, 41, 52, 30, 72, 72, 43, 47];
+            const jornada6 = [42, 45, 45, 47, 47, 53, 64, 74, 38, 68];
+            const jornada7 = [32, 42, 42, 33, 46, 45, 52, 45, 36, 43];
+            const jornada8 = [47, 43, 46, 39, 53, 68, 45, 56, 42, 67];
+            const jornada9 = [66, 41, 43, 53, 87, 70, 48, 57, 69, 41];
+            const jornada10 = [55, 66, 36, 54, 48, 80, 62, 62, 35, 71];
+            const jornada11 = [49, 58, 0, 78, 48, 68, 52, 36, 38, 62];
+            const jornada12 = [48, 49, 32, 69, 67, 70, 50, 49, 44, 61];
+            const jornada13 = [82, 40, 54, 65, 61, 47, 67, 71, 47, 78];
+            const jornada14 = [47, 59, 41, 72, 64, 79, 71, 41, 59, 45];
+            const jornada15 = [43, 36, 73, 54, 57, 45, 67, 52, 25, 47];
+            const jornada16 = [46, 64, 79, 62, 53, 61, 56, 74, 54, 64];
+            const jornada17 = [66, 45, 46, 47, 50, 64, 46, 67, 31, 68];
+            const jornada18 = [60, 49, 49, 48, 54, 84, 40, 76, 43, 59];
+            const jornada19 = [68, 71, 54, 53, 71, 67, 69, 55, 37, 40];
+            const jornada20 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            const jornada21 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            const jornada22 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            const jornada23 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            const jornada24 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            const jornada25 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            const jornada26 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            const jornada27 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            const jornada28 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            const jornada29 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            const jornada30 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            const jornada31 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            const jornada32 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            const jornada33 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            const jornada34 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            const jornada35 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            const jornada36 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        </script>
+
+
+        <!-- Funcion para calcular la tabla de enfrentamientos especificos----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+        <script>
+            // Funcion para calcular la tabla de enfrentamientos especificos
+            function calcularTablaEnfrentamientosEspecificos(nombres, jornada, enfrentamientos, personasliga, estacion) {
+                const tablaEnfrentamientosEspecificos = [];
+
+                enfrentamientos.forEach(enfrentamiento => {
+                    const jugadorA = enfrentamiento.JugadorA;
+                    const jugadorB = enfrentamiento.JugadorB;
+                    const puntosA = jornada[nombres.indexOf(jugadorA)];
+                    const puntosB = jornada[nombres.indexOf(jugadorB)];
+                    let puntosJugadorA = 0;
+                    let puntosJugadorB = 0;
+                    if (puntosA == 0 && puntosB ==0){
+                        puntosJugadorA = ""
+                        puntosJugadorB = ""
+                    }else if (puntosA > puntosB) {
+                        puntosJugadorA = 3;
+                    } else if (puntosA < puntosB) {
+                        puntosJugadorB = 3;
+                    } else {
+                        puntosJugadorA = 1;
+                        puntosJugadorB = 1;
+                    }
+                    y=0;
+                    while (y<10){
+                    if (jugadorA == personasliga[y].nombrel){
+                        personasliga[y].globaliga+=puntosJugadorA;
+                        if(estacion == 1){
+                            personasliga[y].season1+=puntosJugadorA;
+                        }
+                        else if(estacion == 2){
+                            personasliga[y].season2+=puntosJugadorA;
+                        }
+                        else if(estacion == 3){
+                            personasliga[y].season3+=puntosJugadorA;
+                        }
+                        else if(estacion == 4){
+                            personasliga[y].season4+=puntosJugadorA;
+                        }
+                    }
+                    else if (jugadorB == personasliga[y].nombrel){
+                        personasliga[y].globaliga+=puntosJugadorB;
+                        if(estacion == 1){
+                            personasliga[y].season1+=puntosJugadorB;
+                        }
+                        else if(estacion == 2){
+                            personasliga[y].season2+=puntosJugadorB;
+                        }
+                        else if(estacion == 3){
+                            personasliga[y].season3+=puntosJugadorB;
+                        }
+                        else if(estacion == 4){
+                            personasliga[y].season4+=puntosJugadorB;
+                        }
+                    }
+                    y+=1;
+                }
+
+                    tablaEnfrentamientosEspecificos.push({
+                        JugadorA: jugadorA,
+                        JugadorB: jugadorB,
+                        PuntosA: puntosA,
+                        PuntosB: puntosB,
+                        PuntosJugadorA: puntosJugadorA,
+                        PuntosJugadorB: puntosJugadorB,
+                    });
+                });
+                
+                return tablaEnfrentamientosEspecificos;
+                
+            }
+        </script>
+
 
     <!-- Contenido de archivo1.html, no es necesario mostrar las tablas aquí -->
 </body>
