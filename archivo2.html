@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabla de Personas</title>
+    <title>Tabla de mascotas</title>
 </head>
 <body>
-    <h1>Tabla de Personas</h1>
+    <h1>Tabla de mascotas</h1>
 
     <!-- Contenedor para la tabla -->
     <div id="tabla-container"></div>
@@ -19,15 +19,16 @@
         fetch(urlArchivo1)
             .then(response => response.text())
             .then(data => {
+                //---------------------------------------------------------------------------------------------------------------
                 // Crear un contenedor temporal para insertar el código HTML
                 var tempContainer = document.createElement('div');
                 tempContainer.innerHTML = data;
 
-                // Obtener la referencia a la variable global personas definida en archivo1.html
-                var personas = tempContainer.querySelector('script').textContent;
+                // Obtener la referencia a la variable global personasliga definida en archivo1.html
+                var personasliga = tempContainer.querySelector('script').textContent;
 
                 // Evaluar el contenido del script para obtener los datos
-                eval(personas);
+                eval(personasliga);
 
                 // Obtener la referencia al contenedor de la tabla
                 var tablaContainer = document.getElementById('tabla-container');
@@ -44,13 +45,13 @@
                 celdaNombre.innerHTML = '<b>Nombre</b>';
                 celdaEdad.innerHTML = '<b>Edad</b>';
 
-                // Llenar la tabla con datos de personas
-                for (var i = 0; i < personas.length; i++) {
+                // Llenar la tabla con datos de personasliga
+                for (var i = 0; i < personasliga.length; i++) {
                     var fila = tabla.insertRow();
                     var celda1 = fila.insertCell(0);
                     var celda2 = fila.insertCell(1);
-                    celda1.innerHTML = personas[i].nombre;
-                    celda2.innerHTML = personas[i].edad;
+                    celda1.innerHTML = personasliga[i].nombrel;
+                    celda2.innerHTML = personasliga[i].globaliga;
                 }
 
                 // Agregar la tabla al contenedor
