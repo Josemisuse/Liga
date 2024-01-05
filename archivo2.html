@@ -3,73 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tablas de Personas y Mascotas</title>
+    <title>Tabla de Personas</title>
 </head>
 <body>
     <h1>Tabla de Personas</h1>
-    <!-- Contenedor para la tabla de personas -->
-    <div id="tabla-personas-container"></div>
 
-    <h1>Tabla de Mascotas</h1>
-    <!-- Contenedor para la tabla de mascotas -->
-    <div id="tabla-mascotas-container"></div>
+    <!-- Contenedor para la tabla -->
+    <div id="tabla-container"></div>
 
     <script>
-        // URL de los archivos en GitHub Raw
-        var urlArchivoPersonas = 'https://github.com/Josemisuse/Liga/archivo1.html';
-        var urlArchivoMascotas = 'https://github.com/Josemisuse/Liga/archivo2.html';
+        // URL del archivo en GitHub Raw
+        var urlArchivo1 = 'https://josemisuse.github.io/Liga/archivo1.html';
 
-        // Función para cargar y mostrar una tabla
-        function cargarYMostrarTabla(urlArchivo, containerId) {
-            // Obtener la referencia al contenedor de la tabla
-            var tablaContainer = document.getElementById(containerId);
+        // Obtener el contenido del archivo usando fetch
+        fetch(urlArchivo1)
+            .then(response => response.text())
+            .then(data => {
+                // Crear un contenedor temporal para insertar el código HTML
+                var tempContainer = document.createElement('div');
+                tempContainer.innerHTML = data;
 
-            // Obtener el contenido del archivo usando fetch
-            fetch(urlArchivo)
-                .then(response => response.text())
-                .then(data => {
-                    // Crear un contenedor temporal para insertar el código HTML
-                    var tempContainer = document.createElement('div');
-                    tempContainer.innerHTML = data;
+                // Obtener la referencia a la variable global personas definida en archivo1.html
+                var personas = tempContainer.querySelector('script').textContent;
 
-                    // Obtener los datos del script del archivo cargado
-                    var datos = tempContainer.querySelector('script').textContent;
+                // Evaluar el contenido del script para obtener los datos
+                eval(personas);
 
-                    // Evaluar el contenido del script para obtener los datos
-                    eval(datos);
+                // Obtener la referencia al contenedor de la tabla
+                var tablaContainer = document.getElementById('tabla-container');
 
-                    // Crear la tabla y agregarla al contenedor
-                    var tabla = document.createElement('table');
-                    tabla.border = '1';
+                // Crear la tabla y agregarla al contenedor
+                var tabla = document.createElement('table');
+                tabla.border = '1';
 
-                    // Crear la fila de encabezado
-                    var encabezado = tabla.createTHead();
-                    var filaEncabezado = encabezado.insertRow();
-                    for (var prop in datos[0]) {
-                        var celda = filaEncabezado.insertCell();
-                        celda.innerHTML = `<b>${prop}</b>`;
-                    }
+                // Crear la fila de encabezado
+                var encabezado = tabla.createTHead();
+                var filaEncabezado = encabezado.insertRow();
+                var celdaNombre = filaEncabezado.insertCell(0);
+                var celdaEdad = filaEncabezado.insertCell(1);
+                celdaNombre.innerHTML = '<b>Nombre</b>';
+                celdaEdad.innerHTML = '<b>Edad</b>';
 
-                    // Llenar la tabla con datos
-                    for (var i = 0; i < datos.length; i++) {
-                        var fila = tabla.insertRow();
-                        for (var prop in datos[i]) {
-                            var celda = fila.insertCell();
-                            celda.innerHTML = datos[i][prop];
-                        }
-                    }
+                // Llenar la tabla con datos de personas
+                for (var i = 0; i < personas.length; i++) {
+                    var fila = tabla.insertRow();
+                    var celda1 = fila.insertCell(0);
+                    var celda2 = fila.insertCell(1);
+                    celda1.innerHTML = personas[i].nombre;
+                    celda2.innerHTML = personas[i].edad;
+                }
 
-                    // Agregar la tabla al contenedor
-                    tablaContainer.appendChild(tabla);
-                })
-                .catch(error => console.error('Error al cargar el archivo:', error));
-        }
-
-        // Cargar y mostrar la tabla de personas
-        cargarYMostrarTabla(urlArchivoPersonas, 'tabla-personas-container');
-
-        // Cargar y mostrar la tabla de mascotas
-        cargarYMostrarTabla(urlArchivoMascotas, 'tabla-mascotas-container');
+                // Agregar la tabla al contenedor
+                tablaContainer.appendChild(tabla);
+            })
+            .catch(error => console.error('Error al cargar el archivo:', error));
     </script>
 </body>
 </html>
