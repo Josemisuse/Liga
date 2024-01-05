@@ -6,57 +6,41 @@
     <title>Tabla de Personas</title>
 </head>
 <body>
-    <h1>Tabla de Personas2</h1>
+    <h1>Tabla de Personas</h1>
 
     <!-- Contenedor para la tabla -->
     <div id="tabla-container"></div>
 
     <script>
-        // URL del archivo en GitHub Raw
-        var urlArchivo1 = 'https://github.com/Josemisuse/Liga/archivo1.html';
+        // Obtener la referencia a la variable global personas definida en archivo1.html
+        var personas = window.personas;
 
-        // Obtener el contenido del archivo usando fetch
-        fetch(urlArchivo1)
-            .then(response => response.text())
-            .then(data => {
-                // Crear un contenedor temporal para insertar el código HTML
-                var tempContainer = document.createElement('div');
-                tempContainer.innerHTML = data;
+        // Obtener la referencia al contenedor de la tabla
+        var tablaContainer = document.getElementById('tabla-container');
 
-                // Obtener la referencia a la variable global personas definida en archivo1.html
-                var personas = tempContainer.querySelector('script').textContent;
+        // Crear la tabla y agregarla al contenedor
+        var tabla = document.createElement('table');
+        tabla.border = '1';
 
-                // Evaluar el contenido del script para obtener los datos
-                eval(personas);
+        // Crear la fila de encabezado
+        var encabezado = tabla.createTHead();
+        var filaEncabezado = encabezado.insertRow();
+        var celdaNombre = filaEncabezado.insertCell(0);
+        var celdaEdad = filaEncabezado.insertCell(1);
+        celdaNombre.innerHTML = '<b>Nombre</b>';
+        celdaEdad.innerHTML = '<b>Edad</b>';
 
-                // Obtener la referencia al contenedor de la tabla
-                var tablaContainer = document.getElementById('tabla-container');
+        // Llenar la tabla con datos de personas
+        for (var i = 0; i < personas.length; i++) {
+            var fila = tabla.insertRow();
+            var celda1 = fila.insertCell(0);
+            var celda2 = fila.insertCell(1);
+            celda1.innerHTML = personas[i].nombre;
+            celda2.innerHTML = personas[i].edad;
+        }
 
-                // Crear la tabla y agregarla al contenedor
-                var tabla = document.createElement('table');
-                tabla.border = '1';
-
-                // Crear la fila de encabezado
-                var encabezado = tabla.createTHead();
-                var filaEncabezado = encabezado.insertRow();
-                var celdaNombre = filaEncabezado.insertCell(0);
-                var celdaEdad = filaEncabezado.insertCell(1);
-                celdaNombre.innerHTML = '<b>Nombre</b>';
-                celdaEdad.innerHTML = '<b>Edad</b>';
-
-                // Llenar la tabla con datos de personas
-                for (var i = 0; i < personas.length; i++) {
-                    var fila = tabla.insertRow();
-                    var celda1 = fila.insertCell(0);
-                    var celda2 = fila.insertCell(1);
-                    celda1.innerHTML = personas[i].nombre;
-                    celda2.innerHTML = personas[i].edad;
-                }
-
-                // Agregar la tabla al contenedor
-                tablaContainer.appendChild(tabla);
-            })
-            .catch(error => console.error('Error al cargar el archivo:', error));
+        // Agregar la tabla al contenedor
+        tablaContainer.appendChild(tabla);
     </script>
 </body>
 </html>
