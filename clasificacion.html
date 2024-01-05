@@ -112,6 +112,26 @@
     var jornada34 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
     var jornada35 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
     var jornada36 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+    var personas = [
+           { nombre: "", edad: "" },
+           { nombre: "", edad: "" },
+           { nombre: "", edad: "" },  // Cambiar "a" por "b"
+           { nombre: "", edad: "" },
+           { nombre: "", edad: "" },
+           { nombre: "", edad: "" },
+           { nombre: "", edad: "" },
+           { nombre: "", edad: "" },
+           { nombre: "", edad: "" },
+           { nombre: "", edad: "" }
+    ];
+
+    // Cambiar el nombre de la tercera persona
+    x=0;
+    while (x<10){
+        personas[x].nombre = nombres[x];
+        personas[x].edad= jornada1[x]+jornada2[x]+jornada3[x]+jornada4[x]+jornada5[x]+jornada6[x]+jornada7[x]+jornada8[x]+jornada9[x]+jornada10[x]+jornada11[x]+jornada12[x]+jornada13[x]+jornada14[x]+jornada15[x]+jornada16[x]+jornada17[x]+jornada18[x]+jornada19[x]+jornada20[x]+jornada21[x]+jornada22[x]+jornada23[x]+jornada24[x]+jornada25[x]+jornada26[x]+jornada27[x]+jornada28[x]+jornada29[x]+jornada30[x]+jornada31[x]+jornada32[x]+jornada33[x]+jornada34[x]+jornada35[x]+jornada36[x];
+        x+=1;
+    }
 </script>
 
 
@@ -1522,26 +1542,7 @@
 
     <script>
         // Crear un arreglo de objetos que contienen nombres y edades
-        var personas = [
-            { nombre: "", edad: "" },
-            { nombre: "", edad: "" },
-            { nombre: "", edad: "" },  // Cambiar "a" por "b"
-            { nombre: "", edad: "" },
-            { nombre: "", edad: "" },
-            { nombre: "", edad: "" },
-            { nombre: "", edad: "" },
-            { nombre: "", edad: "" },
-            { nombre: "", edad: "" },
-            { nombre: "", edad: "" }
-        ];
-
-        // Cambiar el nombre de la tercera persona
-        x=0;
-        while (x<10){
-            personas[x].nombre = nombres[x];
-            personas[x].edad= jornada1[x]+jornada2[x]+jornada3[x]+jornada4[x]+jornada5[x]+jornada6[x]+jornada7[x]+jornada8[x]+jornada9[x]+jornada10[x]+jornada11[x]+jornada12[x]+jornada13[x]+jornada14[x]+jornada15[x]+jornada16[x]+jornada17[x]+jornada18[x]+jornada19[x]+jornada20[x]+jornada21[x]+jornada22[x]+jornada23[x]+jornada24[x]+jornada25[x]+jornada26[x]+jornada27[x]+jornada28[x]+jornada29[x]+jornada30[x]+jornada31[x]+jornada32[x]+jornada33[x]+jornada34[x]+jornada35[x]+jornada36[x];
-            x+=1;
-        }
+       
     
         // Funcion de comparacion para ordenar por edad
         function compararPorEdad(a, b) {
